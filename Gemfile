@@ -43,6 +43,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
 gem 'two_factor_authentication'
+gem 'twilio-ruby'
 
 gem 'cancan'
 gem 'papertrail'

@@ -21,6 +21,10 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
+  #two factor auth
+  config.max_login_attempts = 3
+  config.allowed_otp_drift_seconds = 30
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
