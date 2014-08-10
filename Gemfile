@@ -48,3 +48,5 @@ gem 'cancan'
 gem 'papertrail'
 
 gem 'puma', group: :production
+
+gem 'foreigner'
