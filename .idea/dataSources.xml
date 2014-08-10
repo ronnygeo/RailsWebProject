@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="951744661">
+    <data-source source="LOCAL" name="Rails MyCityAmigo: development" uuid="02c6eef3-4291-4ada-ae7d-bfa4dc80509d">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/MyCityAmigo_development</jdbc-url>
+      <user-name>mycityamigo</user-name>
+      <user-password>dfc7dfd3dfc9dfc3dfdedfd3dfcbdfc7dfc3dfcddfc5</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails MyCityAmigo: test" uuid="59a53acb-62e7-475d-ba73-ce0c82198e0d">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:MyCityAmigo_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails MyCityAmigo: production" uuid="a45b5988-df7b-4cdd-9240-b5d2f61f8b3d">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:MyCityAmigo_production</jdbc-url>
+      <user-name>MyCityAmigo</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe7dff3dfe9dfe3dffedff3dfebdfe7dfe3dfeddfe5dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
