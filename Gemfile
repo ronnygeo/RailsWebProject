@@ -51,3 +51,8 @@ gem 'papertrail'
 gem 'puma', group: :production
 
 gem 'foreigner'
+gem 'figaro'
+
+
+#gem 'search-kick'
+#gem 'elastic-search'
