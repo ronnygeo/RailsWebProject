@@ -41,7 +41,7 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
-gem 'omniauth-linkedin'
+gem 'omniauth-google-oauth2'
 gem 'two_factor_authentication'
 gem 'twilio-ruby'
 

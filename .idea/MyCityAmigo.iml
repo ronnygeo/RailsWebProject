@@ -161,7 +161,7 @@
     <orderEntry type="library" scope="PROVIDED" name="oauth2 (v1.0.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth (v1.2.2, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-facebook (v2.0.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="omniauth-linkedin (v0.2.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="omniauth-google-oauth2 (v0.2.5, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-oauth (v1.0.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-oauth2 (v1.2.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-twitter (v1.0.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
