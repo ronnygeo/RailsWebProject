@@ -1,11 +1,11 @@
-require 'twilio-ruby'
 class User < ActiveRecord::Base
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :two_factor_authenticatable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable #,:confirmable
+
   has_one_time_password
   has_many :identities
 
@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
      request.ip != '0.0.0.0'
      request.ip != '127.0.0.1'
      request.ip != 'localhost'
-     current_user.phone_verfied
+     self.phone_verified = false
    end
 
 
@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
             email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
             password: Devise.friendly_token[0,20]
         )
-        user.skip_confirmation!
+        #user.skip_confirmation!
         user.save!
       end
     end

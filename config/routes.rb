@@ -62,7 +62,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+  #match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
 
 end

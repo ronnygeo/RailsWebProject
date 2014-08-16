@@ -6,8 +6,6 @@ class Devise::TwoFactorAuthenticationController < DeviseController
   end
 
   def update
-    redirect_to stored_location_for(resource_name) || :root if resource.phone_verified
-
     render :show and return if params[:code].nil?
 
     if resource.authenticate_otp(params[:code])
