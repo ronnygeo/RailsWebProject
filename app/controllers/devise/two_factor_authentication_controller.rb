@@ -9,7 +9,7 @@ class Devise::TwoFactorAuthenticationController < DeviseController
     render :show and return if params[:code].nil?
 
     if resource.authenticate_otp(params[:code])
-      warden.session(resource_name)[TwoFactorAuthentication::NEED_AUTHENTICATION] = false
+      #warden.session(resource_name)[TwoFactorAuthentication::NEED_AUTHENTICATION] = false
       sign_in resource_name, resource, :bypass => true
       set_flash_message :notice, :success
       resource.phone_verified = true

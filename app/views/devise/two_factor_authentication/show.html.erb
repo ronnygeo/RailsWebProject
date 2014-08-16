@@ -1,5 +1,5 @@
 <h2>Hi, you received a code by SMS, please enter it below, thanks!</h2>
-
+<% current_user.send_two_factor_authentication_code %>
 <%= form_tag([resource_name, :two_factor_authentication], :method => :put) do %>
     <%= text_field_tag :code %>
     <%= submit_tag "Log in!" %>

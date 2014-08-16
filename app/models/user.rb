@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
      request.ip != '0.0.0.0'
      request.ip != '127.0.0.1'
      request.ip != 'localhost'
-     self.phone_verified = false
+     self.phone_verified = nil
    end
 
 
