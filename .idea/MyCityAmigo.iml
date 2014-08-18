@@ -147,6 +147,7 @@
     <orderEntry type="library" scope="PROVIDED" name="faraday (v0.9.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="figaro (v0.7.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="foreigner (v1.6.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="foundation-rails (v5.3.3.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hashie (v3.2.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.6.11, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
@@ -166,7 +167,9 @@
     <orderEntry type="library" scope="PROVIDED" name="omniauth-oauth2 (v1.2.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="papertrail (v0.9.10, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pg (v0.17.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.5, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="puma (v2.9.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.5.2, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.2, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v4.1.4, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />

@@ -56,3 +56,7 @@ gem 'figaro'
 
 #gem 'search-kick'
 #gem 'elastic-search'
+
+
+
+gem 'foundation-rails'

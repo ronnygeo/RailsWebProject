@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>MyCityAmigo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= link_to 'Sign In', new_user_session_path %>
-<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+    <title><%= content_for?(:title) ? yield(:title) : "My City Amigo" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <div class="row">
+    <div class="large-12 column">
+      <%= yield %>
+    </div>
+    </div>
+    <div class="row"><div class="large-12 column">
+      <% unless user_signed_in? %>
+      <%= link_to 'Sign In', new_user_session_path %>
+          <% else %>
+      <%= link_to 'Sign Out', destroy_user_session_path, class: "button secondary radius", method: :delete %>
+          <% end %>
+    </div></div>
+
+
+
+
+
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
