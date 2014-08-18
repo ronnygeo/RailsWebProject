@@ -60,3 +60,4 @@ gem 'figaro'
 
 
 gem 'foundation-rails'
+gem 'jquery-turbolinks'

@@ -1,11 +1,10 @@
 <% content_for :head do %>
     <title>Welcome to My City Amigo</title>
 <% end %>
-
 <h1>My City Amigo</h1>
 <p>My City Amigo, home of Amigos.</p>
 <% if user_signed_in? %>
-<div class="panel">
+<div class="panel radius">
   <h3>Verify your phone number to enjoy all the benefits!</h3>
   <%= link_to "Verify Now", user_two_factor_authentication_path, class: "button primary round", method: :get %>
 </div>

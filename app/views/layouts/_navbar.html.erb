@@ -1,0 +1,62 @@
+<div class="contain-to-grid">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="/">My City Amigo</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li class="divider"></li>
+            <li class="has-dropdown"><a href="#">Events</a>
+              <ul class="dropdown">
+                <li><a href="#">Sports</a></li>
+              </ul>
+            </li>
+          <li class="divider"></li>
+          <li class="has-dropdown"><a href="#">Listings</a>
+            <ul class="dropdown">
+              <li><a href="#">Nightlife</a></li>
+              <li><a href="#">Outings</a></li>
+              <li><a href="#">Restaurants</a></li>
+            </ul>
+          </li>
+          <li class="divider"></li>
+          <li class="has-dropdown"><a href="#">General Information</a>
+            <ul class="dropdown">
+              <li><a href="#">Dubai Culture</a></li>
+              <li><a href="#">Do's and Dont's</a></li>
+              <li><a href="#">Tourism</a></li>
+            </ul>
+          </li>
+          <li class="divider"></li>
+          <li><%= link_to "About", pages_about_path %>
+          </li>
+          <li class="divider"></li>
+          <li><%= link_to "Contact Us", pages_contact_path %>
+          </li>
+          <li class="divider"></li>
+        </ul>
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="has-dropdown">
+          <a href="#">My Account</a>
+          <ul class="dropdown">
+            <li><% unless user_signed_in? %>
+                  <%= link_to 'Sign In', new_user_session_path %></li>
+              <% else %>
+                  <li><a href="#">My Profile</a></li>
+                  <li><a href="#">My Offers</a></li>
+                  <li><a href="#">My Points</a></li>
+                  <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+              <% end %></li>
+              </ul>
+        </li>
+      </ul>
+    </section>
+</nav>
+</nav>
+    </div>
