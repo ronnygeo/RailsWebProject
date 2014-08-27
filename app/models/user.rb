@@ -68,7 +68,8 @@ class User < ActiveRecord::Base
             email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
             password: Devise.friendly_token[0,20],
             gender: auth.extra.raw_info.gender,
-            phone: auth.info.phone
+            phone: auth.info.phone,
+          #  avatar:auth.info.image
         )
         #user.skip_confirmation!
         user.save!
