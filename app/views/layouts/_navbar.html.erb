@@ -42,13 +42,13 @@
         </ul>
       <!-- Right Nav Section -->
       <ul class="right">
-        <li class="has-dropdown">
-          <a href="#">My Account</a>
-          <ul class="dropdown">
             <li><% unless user_signed_in? %>
                   <%= link_to 'Sign In', new_user_session_path %></li>
               <% else %>
-                  <li><a href="#">My Profile</a></li>
+                  <li class="has-dropdown">
+                    <a href="#">My Account</a>
+                    <ul class="dropdown">
+                  <li><a href="/users/edit">My Profile</a></li>
                   <li><a href="#">My Offers</a></li>
                   <li><a href="#">My Points</a></li>
                   <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>

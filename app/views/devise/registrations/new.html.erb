@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, html: {multipart: true}, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div><%= f.label :email %><br />
@@ -11,6 +11,21 @@
 
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+    <div><%= f.label :name %><br />
+      <%= f.text_field :name %></div>
+
+    <div><%= f.label :phone %><br />
+      <%= f.text_field :phone %></div>
+
+    <div><%= f.label :gender %><br />
+      <%= f.select :gender, ["Male","Female"] %></div>
+
+    <div><%= f.label :DateOfBirth %><br />
+      <%= f.text_field :DateOfBirth %></div>
+
+    <div><%= f.label :nationality %><br />
+      <%= f.text_field :nationality %></div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

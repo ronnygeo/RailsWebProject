@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   #before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
   def ensure_signup_complete
     # Ensure we don't go into an infinite loop
     return if action_name == 'finish_signup'
@@ -14,5 +18,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :name, :phone, :DateOfBirth, :nationality, :gender) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :phone, :DateOfBirth, :nationality, :gender) }
+  end
 
 end

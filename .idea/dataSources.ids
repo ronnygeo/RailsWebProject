@@ -2368,6 +2368,14 @@
       <column name="otp_secret_key" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="second_factor_attempts_count" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
       <column name="name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone_verified" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="ZmFsc2U="/>
+      <column name="DateOfBirth" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="nationality" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="gender" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="admin" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="client" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="role" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="users_pkey" columns="id"/>
       <exported-key name="identities_user_id_fk" table="identities" schema="public" catalog="MyCityAmigo_development" columns="user_id"/>
       <index name="index_users_on_email" unique="true" columns="email"/>

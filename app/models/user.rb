@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_one_time_password
   has_many :identities
 
+  #Methods for 2FA
+
   def send_two_factor_authentication_code
     puts ">>>>>>>>>>>>>>> otp_code: #{otp_code}"
     # use Model#otp_code and send via SMS, etc.
@@ -34,8 +36,6 @@ class User < ActiveRecord::Base
      request.ip != 'localhost'
      self.phone_verified = nil
    end
-
-
 
 
 
@@ -66,7 +66,9 @@ class User < ActiveRecord::Base
             name: auth.extra.raw_info.name,
             #username: auth.info.nickname || auth.uid,
             email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-            password: Devise.friendly_token[0,20]
+            password: Devise.friendly_token[0,20],
+            gender: auth.extra.raw_info.gender,
+            phone: auth.info.phone
         )
         #user.skip_confirmation!
         user.save!
