@@ -43,6 +43,7 @@ class User < ActiveRecord::Base
 
     # Get the identity and user if they exist
     identity = Identity.find_for_oauth(auth)
+    puts auth.provider
     #puts auth.info.email
     #puts auth.info.email_verified
 
@@ -58,7 +59,7 @@ class User < ActiveRecord::Base
       # Get the existing user by email if the provider gives us a verified email.
       # If no verified email was provided we assign a temporary email and ask the
       # user to verify it on the next step via UsersController.finish_signup
-      email_is_verified = (auth.info.email) && (auth.info.verified || auth.info.verified_email || auth.extra.raw_info.email_verified)
+      email_is_verified = (auth.info.email) && (auth.info.verified || auth.info.verified_email || auth.extra.raw_info.email_verified || auth.provider == "foursquare")
       email = auth.info.email if email_is_verified
       user = User.where(:email => email).first if email
 
