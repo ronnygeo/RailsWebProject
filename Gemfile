@@ -48,6 +48,8 @@ gem 'twilio-ruby'
 gem 'cancan'
 gem 'papertrail'
 
+gem 'fog'
+
 gem 'puma', group: :production
 
 gem 'foreigner'
