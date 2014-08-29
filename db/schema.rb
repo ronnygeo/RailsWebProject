@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827191042) do
+ActiveRecord::Schema.define(version: 20140829112037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "identities", force: true do |t|
     t.integer  "user_id"
@@ -25,6 +32,16 @@ ActiveRecord::Schema.define(version: 20140827191042) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
+  create_table "subcategories", force: true do |t|
+    t.string   "name"
+    t.integer  "category_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                        default: "",    null: false
@@ -57,5 +74,7 @@ ActiveRecord::Schema.define(version: 20140827191042) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "identities", "users", name: "identities_user_id_fk"
+
+  add_foreign_key "subcategories", "categories", name: "subcategories_category_id_fk"
 
 end

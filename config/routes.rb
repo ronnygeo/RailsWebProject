@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :subcategories
+
+  resources :categories
+
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
   get 'pages/home'
