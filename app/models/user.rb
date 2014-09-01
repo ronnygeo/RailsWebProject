@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_one_time_password
   has_many :identities
 
+  has_one :location, as: :geolocatable
+
   #Methods for 2FA
 
   def send_two_factor_authentication_code
