@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901190053) do
+ActiveRecord::Schema.define(version: 20140901191328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,19 @@ ActiveRecord::Schema.define(version: 20140901190053) do
     t.string   "ip"
     t.integer  "geolocatable_id"
     t.string   "geolocatable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "places", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "details"
+    t.decimal  "fees",        precision: 2, scale: 0
+    t.string   "area"
+    t.string   "kind"
+    t.text     "activities"
+    t.text     "keyword"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
