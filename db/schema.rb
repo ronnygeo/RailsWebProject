@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902184943) do
+ActiveRecord::Schema.define(version: 20140902185937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,18 +20,18 @@ ActiveRecord::Schema.define(version: 20140902184943) do
     t.string   "name"
     t.string   "caption"
     t.integer  "category_id"
-    t.integer  "subcategorization_id"
     t.string   "link"
     t.string   "position"
     t.string   "imagesize"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "client_id"
+    t.integer  "subcategory_id"
   end
 
   add_index "ads", ["category_id"], name: "index_ads_on_category_id", using: :btree
   add_index "ads", ["client_id"], name: "index_ads_on_client_id", using: :btree
-  add_index "ads", ["subcategorization_id"], name: "index_ads_on_subcategorization_id", using: :btree
+  add_index "ads", ["subcategory_id"], name: "index_ads_on_subcategory_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -220,7 +220,7 @@ ActiveRecord::Schema.define(version: 20140902184943) do
 
   add_foreign_key "ads", "categories", name: "ads_category_id_fk"
   add_foreign_key "ads", "clients", name: "ads_client_id_fk"
-  add_foreign_key "ads", "subcategorizations", name: "ads_subcategorization_id_fk"
+  add_foreign_key "ads", "subcategories", name: "ads_subcategory_id_fk"
 
   add_foreign_key "clients", "categories", name: "clients_category_id_fk"
 
