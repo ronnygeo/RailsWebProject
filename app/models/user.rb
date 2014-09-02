@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_one_time_password
   has_many :identities
+  has_many :reviews
 
   has_one :location, as: :geolocatable
 
