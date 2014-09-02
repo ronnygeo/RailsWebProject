@@ -1,0 +1,41 @@
+<h1>Listing listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Client</th>
+      <th>Subcategorization</th>
+      <th>Fee</th>
+      <th>Featured</th>
+      <th>Keywords</th>
+      <th>Link</th>
+      <th>On package</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= listing.name %></td>
+        <td><%= listing.description %></td>
+        <td><%= listing.client %></td>
+        <td><%= listing.subcategorization %></td>
+        <td><%= listing.fee %></td>
+        <td><%= listing.featured %></td>
+        <td><%= listing.keywords %></td>
+        <td><%= listing.link %></td>
+        <td><%= listing.on_package %></td>
+        <td><%= link_to 'Show', listing %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path %>

@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902180303) do
+ActiveRecord::Schema.define(version: 20140902182811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ads", force: true do |t|
+    t.string   "name"
+    t.string   "caption"
+    t.integer  "category_id"
+    t.integer  "subcategorization_id"
+    t.string   "link"
+    t.string   "position"
+    t.string   "imagesize"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "client_id"
+  end
+
+  add_index "ads", ["category_id"], name: "index_ads_on_category_id", using: :btree
+  add_index "ads", ["client_id"], name: "index_ads_on_client_id", using: :btree
+  add_index "ads", ["subcategorization_id"], name: "index_ads_on_subcategorization_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -45,7 +62,7 @@ ActiveRecord::Schema.define(version: 20140902180303) do
     t.integer  "subcategorization_id"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.decimal  "fee",                  precision: 10, scale: 2
+    t.decimal  "fee",                  precision: 2, scale: 0
     t.string   "dress_code"
     t.boolean  "featured"
     t.text     "keywords"
@@ -69,6 +86,23 @@ ActiveRecord::Schema.define(version: 20140902180303) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
+  create_table "listings", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "client_id"
+    t.integer  "subcategorization_id"
+    t.decimal  "fee",                  precision: 2, scale: 0
+    t.boolean  "featured"
+    t.text     "keywords"
+    t.string   "link"
+    t.boolean  "on_package"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "listings", ["client_id"], name: "index_listings_on_client_id", using: :btree
+  add_index "listings", ["subcategorization_id"], name: "index_listings_on_subcategorization_id", using: :btree
+
   create_table "locations", force: true do |t|
     t.string   "lat"
     t.string   "long"
@@ -79,6 +113,26 @@ ActiveRecord::Schema.define(version: 20140902180303) do
     t.datetime "updated_at"
   end
 
+  create_table "payments", force: true do |t|
+    t.integer  "client_id"
+    t.integer  "event_id"
+    t.integer  "ad_id"
+    t.integer  "listing_id"
+    t.decimal  "amount",             precision: 2, scale: 0
+    t.date     "valid_from"
+    t.date     "valid_to"
+    t.string   "reference_code"
+    t.boolean  "payment_received"
+    t.date     "initial_start_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "payments", ["ad_id"], name: "index_payments_on_ad_id", using: :btree
+  add_index "payments", ["client_id"], name: "index_payments_on_client_id", using: :btree
+  add_index "payments", ["event_id"], name: "index_payments_on_event_id", using: :btree
+  add_index "payments", ["listing_id"], name: "index_payments_on_listing_id", using: :btree
+
   create_table "places", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -87,10 +141,29 @@ ActiveRecord::Schema.define(version: 20140902180303) do
     t.string   "area"
     t.string   "kind"
     t.text     "activities"
-    t.text     "keyword"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "keywords"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "client_id"
+    t.integer  "event_id"
+    t.integer  "listing_id"
+    t.integer  "place_id"
+    t.decimal  "rating"
+    t.text     "review"
+    t.float    "popularity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "reviews", ["client_id"], name: "index_reviews_on_client_id", using: :btree
+  add_index "reviews", ["event_id"], name: "index_reviews_on_event_id", using: :btree
+  add_index "reviews", ["listing_id"], name: "index_reviews_on_listing_id", using: :btree
+  add_index "reviews", ["place_id"], name: "index_reviews_on_place_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "subcategories", force: true do |t|
     t.string   "name"
@@ -144,12 +217,30 @@ ActiveRecord::Schema.define(version: 20140902180303) do
   add_index "users", ["otp_secret_key"], name: "index_users_on_otp_secret_key", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "ads", "categories", name: "ads_category_id_fk"
+  add_foreign_key "ads", "clients", name: "ads_client_id_fk"
+  add_foreign_key "ads", "subcategorizations", name: "ads_subcategorization_id_fk"
+
   add_foreign_key "clients", "categories", name: "clients_category_id_fk"
 
   add_foreign_key "events", "clients", name: "events_client_id_fk"
   add_foreign_key "events", "subcategorizations", name: "events_subcategorization_id_fk"
 
   add_foreign_key "identities", "users", name: "identities_user_id_fk"
+
+  add_foreign_key "listings", "clients", name: "listings_client_id_fk"
+  add_foreign_key "listings", "subcategorizations", name: "listings_subcategorization_id_fk"
+
+  add_foreign_key "payments", "ads", name: "payments_ad_id_fk"
+  add_foreign_key "payments", "clients", name: "payments_client_id_fk"
+  add_foreign_key "payments", "events", name: "payments_event_id_fk"
+  add_foreign_key "payments", "listings", name: "payments_listing_id_fk"
+
+  add_foreign_key "reviews", "clients", name: "reviews_client_id_fk"
+  add_foreign_key "reviews", "events", name: "reviews_event_id_fk"
+  add_foreign_key "reviews", "listings", name: "reviews_listing_id_fk"
+  add_foreign_key "reviews", "places", name: "reviews_place_id_fk"
+  add_foreign_key "reviews", "users", name: "reviews_user_id_fk"
 
   add_foreign_key "subcategories", "categories", name: "subcategories_category_id_fk"
 

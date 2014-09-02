@@ -8,7 +8,7 @@ class CreatePlaces < ActiveRecord::Migration
       t.string :area
       t.string :kind
       t.text :activities
-      t.text :keyword
+      t.text :keywords
       t.timestamps
     end
   end

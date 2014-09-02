@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @listing.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @listing.client %>
+</p>
+
+<p>
+  <strong>Subcategorization:</strong>
+  <%= @listing.subcategorization %>
+</p>
+
+<p>
+  <strong>Fee:</strong>
+  <%= @listing.fee %>
+</p>
+
+<p>
+  <strong>Featured:</strong>
+  <%= @listing.featured %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @listing.keywords %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @listing.link %>
+</p>
+
+<p>
+  <strong>On package:</strong>
+  <%= @listing.on_package %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

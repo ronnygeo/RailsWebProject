@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @payment.client %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @payment.event %>
+</p>
+
+<p>
+  <strong>Ad:</strong>
+  <%= @payment.ad %>
+</p>
+
+<p>
+  <strong>Listing:</strong>
+  <%= @payment.listing %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @payment.amount %>
+</p>
+
+<p>
+  <strong>Valid from:</strong>
+  <%= @payment.valid_from %>
+</p>
+
+<p>
+  <strong>Valid to:</strong>
+  <%= @payment.valid_to %>
+</p>
+
+<p>
+  <strong>Reference code:</strong>
+  <%= @payment.reference_code %>
+</p>
+
+<p>
+  <strong>Payment received:</strong>
+  <%= @payment.payment_received %>
+</p>
+
+<p>
+  <strong>Initial start date:</strong>
+  <%= @payment.initial_start_date %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>
