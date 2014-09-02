@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902182811) do
+ActiveRecord::Schema.define(version: 20140902184943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,10 +59,9 @@ ActiveRecord::Schema.define(version: 20140902182811) do
     t.string   "name"
     t.text     "description"
     t.integer  "client_id"
-    t.integer  "subcategorization_id"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.decimal  "fee",                  precision: 2, scale: 0
+    t.decimal  "fee",            precision: 2, scale: 0
     t.string   "dress_code"
     t.boolean  "featured"
     t.text     "keywords"
@@ -74,7 +73,6 @@ ActiveRecord::Schema.define(version: 20140902182811) do
   end
 
   add_index "events", ["client_id"], name: "index_events_on_client_id", using: :btree
-  add_index "events", ["subcategorization_id"], name: "index_events_on_subcategorization_id", using: :btree
 
   create_table "identities", force: true do |t|
     t.integer  "user_id"
@@ -90,8 +88,7 @@ ActiveRecord::Schema.define(version: 20140902182811) do
     t.string   "name"
     t.text     "description"
     t.integer  "client_id"
-    t.integer  "subcategorization_id"
-    t.decimal  "fee",                  precision: 2, scale: 0
+    t.decimal  "fee",         precision: 2, scale: 0
     t.boolean  "featured"
     t.text     "keywords"
     t.string   "link"
@@ -101,7 +98,6 @@ ActiveRecord::Schema.define(version: 20140902182811) do
   end
 
   add_index "listings", ["client_id"], name: "index_listings_on_client_id", using: :btree
-  add_index "listings", ["subcategorization_id"], name: "index_listings_on_subcategorization_id", using: :btree
 
   create_table "locations", force: true do |t|
     t.string   "lat"
@@ -144,6 +140,7 @@ ActiveRecord::Schema.define(version: 20140902182811) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "keywords"
+    t.boolean  "featured"
   end
 
   create_table "reviews", force: true do |t|
@@ -180,8 +177,12 @@ ActiveRecord::Schema.define(version: 20140902182811) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "place_id"
+    t.integer  "event_id"
+    t.integer  "listing_id"
   end
 
+  add_index "subcategorizations", ["event_id"], name: "index_subcategorizations_on_event_id", using: :btree
+  add_index "subcategorizations", ["listing_id"], name: "index_subcategorizations_on_listing_id", using: :btree
   add_index "subcategorizations", ["place_id"], name: "index_subcategorizations_on_place_id", using: :btree
   add_index "subcategorizations", ["subcategory_id"], name: "index_subcategorizations_on_subcategory_id", using: :btree
 
@@ -224,12 +225,10 @@ ActiveRecord::Schema.define(version: 20140902182811) do
   add_foreign_key "clients", "categories", name: "clients_category_id_fk"
 
   add_foreign_key "events", "clients", name: "events_client_id_fk"
-  add_foreign_key "events", "subcategorizations", name: "events_subcategorization_id_fk"
 
   add_foreign_key "identities", "users", name: "identities_user_id_fk"
 
   add_foreign_key "listings", "clients", name: "listings_client_id_fk"
-  add_foreign_key "listings", "subcategorizations", name: "listings_subcategorization_id_fk"
 
   add_foreign_key "payments", "ads", name: "payments_ad_id_fk"
   add_foreign_key "payments", "clients", name: "payments_client_id_fk"
@@ -244,6 +243,8 @@ ActiveRecord::Schema.define(version: 20140902182811) do
 
   add_foreign_key "subcategories", "categories", name: "subcategories_category_id_fk"
 
+  add_foreign_key "subcategorizations", "events", name: "subcategorizations_event_id_fk"
+  add_foreign_key "subcategorizations", "listings", name: "subcategorizations_listing_id_fk"
   add_foreign_key "subcategorizations", "places", name: "subcategorizations_place_id_fk"
   add_foreign_key "subcategorizations", "subcategories", name: "subcategorizations_subcategory_id_fk"
 

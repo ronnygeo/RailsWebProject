@@ -2415,7 +2415,6 @@
       <column name="name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="description" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="client_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="subcategorization_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="start_time" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="end_time" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="fee" sqlType="numeric" precision="2" scale="0" nullable="true" jdbcType="2"/>
@@ -2429,9 +2428,8 @@
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <primary-key name="events_pkey" columns="id"/>
       <foreign-key name="events_client_id_fk" columns="client_id" ref-table="clients" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="events_subcategorization_id_fk" columns="subcategorization_id" ref-table="subcategorizations" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="subcategorizations_event_id_fk" table="subcategorizations" schema="public" catalog="MyCityAmigo_development" columns="event_id"/>
       <index name="index_events_on_client_id" unique="false" columns="client_id"/>
-      <index name="index_events_on_subcategorization_id" unique="false" columns="subcategorization_id"/>
     </table>
     <table name="events_id_seq" schema="public" catalog="MyCityAmigo_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -2484,6 +2482,7 @@
       <primary-key name="listings_pkey" columns="id"/>
       <foreign-key name="listings_client_id_fk" columns="client_id" ref-table="clients" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="listings_subcategorization_id_fk" columns="subcategorization_id" ref-table="subcategorizations" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="subcategorizations_listing_id_fk" table="subcategorizations" schema="public" catalog="MyCityAmigo_development" columns="listing_id"/>
       <index name="index_listings_on_client_id" unique="false" columns="client_id"/>
       <index name="index_listings_on_subcategorization_id" unique="false" columns="subcategorization_id"/>
     </table>
@@ -2583,12 +2582,17 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="place_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="event_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="listing_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="subcategorizations_pkey" columns="id"/>
+      <foreign-key name="subcategorizations_event_id_fk" columns="event_id" ref-table="events" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="subcategorizations_listing_id_fk" columns="listing_id" ref-table="listings" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="subcategorizations_place_id_fk" columns="place_id" ref-table="places" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="subcategorizations_subcategory_id_fk" columns="subcategory_id" ref-table="subcategories" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="ads_subcategorization_id_fk" table="ads" schema="public" catalog="MyCityAmigo_development" columns="subcategorization_id"/>
-      <exported-key name="events_subcategorization_id_fk" table="events" schema="public" catalog="MyCityAmigo_development" columns="subcategorization_id"/>
       <exported-key name="listings_subcategorization_id_fk" table="listings" schema="public" catalog="MyCityAmigo_development" columns="subcategorization_id"/>
+      <index name="index_subcategorizations_on_event_id" unique="false" columns="event_id"/>
+      <index name="index_subcategorizations_on_listing_id" unique="false" columns="listing_id"/>
       <index name="index_subcategorizations_on_place_id" unique="false" columns="place_id"/>
       <index name="index_subcategorizations_on_subcategory_id" unique="false" columns="subcategory_id"/>
     </table>
