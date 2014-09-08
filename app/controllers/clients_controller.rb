@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+  #load_and_authorize_resource
   # GET /clients
   # GET /clients.json
   def index
@@ -14,6 +14,7 @@ class ClientsController < ApplicationController
 
   # GET /clients/new
   def new
+    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
     @client = Client.new
   end
 
