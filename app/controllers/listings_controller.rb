@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
+  load_and_authorize_resource
+
   # GET /listings
   # GET /listings.json
   def index

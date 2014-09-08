@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
 
   has_one :location, as: :geolocatable
 
+  ROLES = %w[admin moderator author banned]
+
   #Methods for 2FA
 
   def send_two_factor_authentication_code
