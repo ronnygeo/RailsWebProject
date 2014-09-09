@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
 
   ROLES = %w[masteradmin manager moderator author banned]
 
+  def is?(check_role)
+    role.include?(check_role.to_s)
+  end
+
   #Methods for 2FA
 
   def send_two_factor_authentication_code

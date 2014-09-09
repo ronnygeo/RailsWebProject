@@ -20,11 +20,11 @@ class Ability
        if user && user.admin?
          can :access, :rails_admin       # only allow admin users to access Rails Admin
          can :dashboard                  # allow access to dashboard
-         if user.role == "masteradmin"
+         if user.is? :masteradmin
            can :manage, :all             # allow superadmins to do anything
-         elsif user.role == "manager"
+         elsif user.is? :manager
            can :manage, [User, Listing, Event, Review]  # allow managers to do anything to products and users
-         elsif user.role == "moderator"
+         elsif user.is? :moderator
            can :update, [Review], :hidden => false  # allow sales to only update visible products
          end
        else
