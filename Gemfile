@@ -56,7 +56,7 @@ gem 'papertrail'
 #Carrierwave S3 and associated
 gem 'fog', '~> 1.23.0', require: "fog/aws/storage"
 gem 'carrierwave'
-
+gem 'rmagick', '~> 2.13.2'
 
 gem "jquery-fileupload-rails"
 

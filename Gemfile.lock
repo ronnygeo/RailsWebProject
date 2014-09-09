@@ -270,6 +270,7 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     remotipart (1.2.1)
+    rmagick (2.13.3)
     rotp (2.0.0)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
@@ -375,6 +376,7 @@ DEPENDENCIES
   rails (= 4.1.4)
   rails_admin (~> 0.6.3)
   rails_admin_flatly_theme!
+  rmagick (~> 2.13.2)
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
