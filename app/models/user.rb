@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   has_one :location, as: :geolocatable
 
-  ROLES = %w[admin moderator author banned]
+  ROLES = %w[masteradmin manager moderator author banned]
 
   #Methods for 2FA
 
