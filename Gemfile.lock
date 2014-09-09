@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/konjoot/rails_admin_flatly_theme.git
+  revision: 0f70933dbc603d2f2f3b8ccb14e2f933aad95af6
+  specs:
+    rails_admin_flatly_theme (1.1.0)
+      rails (> 3.1.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -92,6 +99,8 @@ GEM
       net-ssh (>= 2.1.3)
       nokogiri (~> 1.5.0)
       ruby-hmac
+    font-awesome-rails (4.2.0.0)
+      railties (>= 3.2, < 5.0)
     foreigner (1.6.1)
       activerecord (>= 3.0.0)
     formatador (0.2.5)
@@ -107,6 +116,8 @@ GEM
     guard-rspec (4.3.1)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
+    haml (4.0.5)
+      tilt
     hashie (3.2.0)
     hike (1.2.3)
     i18n (0.6.11)
@@ -122,10 +133,13 @@ GEM
     jquery-turbolinks (2.0.2)
       railties (>= 3.1.0)
       turbolinks
-    jquery-ui-rails (5.0.0)
+    jquery-ui-rails (4.2.1)
       railties (>= 3.2.16)
     json (1.8.1)
     jwt (1.0.0)
+    kaminari (0.16.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.2)
       addressable (~> 2.3)
     listen (2.7.9)
@@ -146,6 +160,7 @@ GEM
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    nested_form (0.3.2)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.9.1)
@@ -193,6 +208,9 @@ GEM
     rack (1.5.2)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
+    rack-pjax (0.8.0)
+      nokogiri (~> 1.5)
+      rack (~> 1.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.4)
@@ -205,6 +223,20 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.4)
       sprockets-rails (~> 2.0)
+    rails_admin (0.6.3)
+      builder (~> 3.1)
+      coffee-rails (~> 4.0)
+      font-awesome-rails (>= 3.0)
+      haml (~> 4.0)
+      jquery-rails (~> 3.0)
+      jquery-ui-rails (~> 4.0)
+      kaminari (~> 0.14)
+      nested_form (~> 0.3)
+      rack-pjax (~> 0.7)
+      rails (~> 4.0)
+      remotipart (~> 1.0)
+      safe_yaml (~> 1.0)
+      sass-rails (~> 4.0)
     railties (4.1.4)
       actionpack (= 4.1.4)
       activesupport (= 4.1.4)
@@ -217,6 +249,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    remotipart (1.2.1)
     rotp (2.0.0)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
@@ -239,6 +272,7 @@ GEM
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
     ruby-hmac (0.4.0)
+    safe_yaml (1.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -309,7 +343,6 @@ DEPENDENCIES
   jquery-fileupload-rails
   jquery-rails
   jquery-turbolinks
-  jquery-ui-rails
   launchy
   meta_request
   omniauth-facebook
@@ -320,6 +353,8 @@ DEPENDENCIES
   pg
   puma
   rails (= 4.1.4)
+  rails_admin (~> 0.6.3)
+  rails_admin_flatly_theme!
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
