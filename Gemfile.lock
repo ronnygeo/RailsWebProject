@@ -35,7 +35,12 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
+    better_errors (2.0.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     builder (3.2.2)
+    callsite (0.0.11)
     cancan (1.6.10)
     capybara (2.4.1)
       mime-types (>= 1.16)
@@ -131,6 +136,10 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_request (0.3.4)
+      callsite (~> 0.0, >= 0.0.11)
+      rack-contrib (~> 1.1)
+      railties (>= 3.0.0, < 5.0.0)
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (5.4.0)
@@ -182,6 +191,8 @@ GEM
     puma (2.9.0)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.4)
@@ -282,6 +293,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk
   bcrypt (~> 3.1.7)
+  better_errors
   cancan
   capybara
   coffee-rails (~> 4.0.0)
@@ -299,6 +311,7 @@ DEPENDENCIES
   jquery-turbolinks
   jquery-ui-rails
   launchy
+  meta_request
   omniauth-facebook
   omniauth-foursquare
   omniauth-google-oauth2

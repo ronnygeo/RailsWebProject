@@ -70,7 +70,12 @@ gem 'aws-sdk'
 gem 'foundation-rails'
 gem 'jquery-turbolinks'
 
-
+#gem 'rails_admin_flatly_theme', :git => 'git://github.com/konjoot/rails_admin_flatly_theme.git'
+#gem 'rails_admin'
+gem 'better_errors'
+group :development do
+  gem 'meta_request'
+end
 
 group :development, :test do
   gem 'rspec-rails'

@@ -137,8 +137,10 @@
     <orderEntry type="library" scope="PROVIDED" name="aws-sdk (v1.52.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sdk-v1 (v1.52.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.7, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="better_errors (v2.0.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.6.2, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="callsite (v0.0.11, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cancan (v1.6.10, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v2.4.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="celluloid (v0.15.2, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
@@ -177,6 +179,7 @@
     <orderEntry type="library" scope="PROVIDED" name="listen (v2.7.9, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.0.9, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.5.4, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="meta_request (v0.3.4, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="method_source (v0.8.2, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.25.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.4.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
@@ -202,6 +205,7 @@
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.10.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v2.9.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.5.2, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-contrib (v1.1.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.2, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v4.1.4, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.1.4, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
