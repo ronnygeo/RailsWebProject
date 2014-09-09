@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :identities
   has_many :reviews
 
+  mount_uploader :avatar, AvatarUploader
   has_one :location, as: :geolocatable
 
   ROLES = %w[admin moderator author banned]

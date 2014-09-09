@@ -53,7 +53,11 @@ gem 'twilio-ruby'
 gem 'cancan'
 gem 'papertrail'
 
-gem 'fog'
+#Carrierwave S3 and associated
+gem 'fog', '~> 1.23.0', require: "fog/aws/storage"
+gem 'carrierwave'
+
+
 gem "jquery-fileupload-rails"
 
 gem 'puma', group: :production
@@ -72,6 +76,10 @@ gem 'foundation-rails'
 gem 'jquery-turbolinks'
 
 gem 'rails_admin_flatly_theme', :git => 'git://github.com/konjoot/rails_admin_flatly_theme.git'
+
+
+
+
 
 
 gem 'better_errors'
