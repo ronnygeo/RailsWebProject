@@ -60,8 +60,6 @@ gem 'rmagick', '~> 2.13.2'
 
 gem "jquery-fileupload-rails"
 
-gem 'puma', group: :production
-
 gem 'foreigner'
 gem 'figaro'
 
@@ -99,4 +97,9 @@ group :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
+end
+
+group :production do
+  gem 'puma'
+  gem 'newrelic_rpm'
 end
