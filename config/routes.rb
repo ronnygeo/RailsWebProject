@@ -5,21 +5,24 @@ Rails.application.routes.draw do
 
   resources :payments
 
+  concern :locatable do
+    resources :locations
+  end
+
   resources :ads
 
-  resources :listings
+  resources :listings, concerns :locatable
 
-  resources :events
+  resources :events, concerns :locatable
 
   resources :clients
 
-  resources :places
+  resources :places, concerns :locatable
 
-  resources :locations
 
-  resources :subcategories
-
-  resources :categories
+  resources :categories do
+    resources :subcategories
+  end
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
