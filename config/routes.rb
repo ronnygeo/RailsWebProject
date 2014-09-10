@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/adm', as: 'rails_admin'
 
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/skiq'
+  end
+
   resources :reviews
 
   resources :payments
@@ -11,13 +15,13 @@ Rails.application.routes.draw do
 
   resources :ads
 
-  resources :listings, concerns :locatable
+  resources :listings, concerns: :locatable
 
-  resources :events, concerns :locatable
+  resources :events, concerns: :locatable
 
   resources :clients
 
-  resources :places, concerns :locatable
+  resources :places, concerns: :locatable
 
 
   resources :categories do

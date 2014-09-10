@@ -58,6 +58,12 @@ gem 'fog', '~> 1.23.0', require: "fog/aws/storage"
 gem 'carrierwave'
 gem 'rmagick', '~> 2.13.2'
 
+#Including sidekiq
+gem 'sidekiq', '~> 3.2.4'
+gem 'slim', '>= 1.1.0'
+gem 'sinatra', '>= 1.3.0', :require => nil
+
+
 gem "jquery-fileupload-rails"
 
 gem 'foreigner'
