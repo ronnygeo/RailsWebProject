@@ -210,6 +210,7 @@
     <orderEntry type="library" scope="PROVIDED" name="omniauth-oauth2 (v1.2.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-twitter (v1.0.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="paper_trail (v3.0.5, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="papertrail (v0.9.10, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.17.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.5, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />

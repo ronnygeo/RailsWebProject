@@ -78,11 +78,13 @@ gem 'jquery-turbolinks'
 gem 'rails_admin_flatly_theme', :git => 'git://github.com/konjoot/rails_admin_flatly_theme.git'
 
 
+gem 'paper_trail', '~> 3.0.5'
 
 
 
 
 gem 'better_errors'
+
 group :development do
   gem 'meta_request'
 end
