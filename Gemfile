@@ -78,8 +78,9 @@ gem 'rails_admin_flatly_theme', :git => 'git://github.com/konjoot/rails_admin_fl
 
 gem 'paper_trail', '~> 3.0.5'
 
-
-
+#implement search
+gem 'searchkick', '~> 0.8.2'
+gem "searchjoy", '~> 0.0.7'
 
 gem 'better_errors'
 

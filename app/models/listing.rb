@@ -4,4 +4,5 @@ class Listing < ActiveRecord::Base
   has_many :subcategories, through: :subcategorizations
   has_one :payment
   has_many :reviews
+  searchkick
 end
