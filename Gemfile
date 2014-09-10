@@ -58,6 +58,7 @@ gem 'fog', '~> 1.23.0', require: "fog/aws/storage"
 gem 'carrierwave'
 #gem 'rmagick', '~> 2.13.2'
 gem "mini_magick", '~> 3.5.0'
+gem 'carrierwave_backgrounder', '~>0.4.1'
 
 #Including sidekiq
 gem 'sidekiq', '~> 3.2.4'

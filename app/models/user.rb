@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :reviews
 
   mount_uploader :avatar, AvatarUploader
+  process_in_background :avatar
+
   has_one :location, as: :geolocatable
 
   ROLES = %w[masteradmin manager moderator author banned]
