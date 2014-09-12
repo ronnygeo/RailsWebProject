@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/adm', as: 'rails_admin'
 
-  authenticate :user, lambda { |u| u.admin? } do
+  #authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/skiq'
-  end
+  #end
 
   resources :reviews
 
