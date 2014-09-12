@@ -1,15 +1,23 @@
 <% content_for :head do %>
     <title>Welcome to My City Amigo</title>
 <% end %>
-<h1>My City Amigo</h1>
-<p>My City Amigo, home of Amigos.</p>
+<!--h1>My City Amigo</h1>
+<p>My City Amigo, home of Amigos.</p-->
+
+<div class="row">Slideshow</div>
+
+<div class="row">Search bar</div>
+
+<div class="row">Thumbnails of categories</div>
+
+
+
+
+
 <% if user_signed_in? %>
 <div class="panel radius">
   <h3>Verify your phone number to enjoy all the benefits!</h3>
   <%= link_to "Verify Now", user_two_factor_authentication_path, class: "button primary round", method: :get %>
 </div>
-    <div>
-      <%= image_tag User.find(current_user).avatar_url(:thumb) %>
-    </div>
 
 <% end %>
