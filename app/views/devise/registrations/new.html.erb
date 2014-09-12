@@ -15,19 +15,11 @@
     <div><%= f.label :name %><br />
       <%= f.text_field :name %></div>
 
-    <p>
+    <div>
       <label>My Avatar</label>
-      <%= image_tag(@user.avatar_url) if @user.avatar? %>
       <%= f.file_field :avatar %>
       Or load it from the internet <%= f.text_field :remote_avatar_url %>
-    </p>
-
-    <p>
-      <label>
-        <%= f.check_box :remove_avatar %>
-        Remove avatar
-      </label>
-    </p>
+    </div>
 
     <div><%= f.label :phone %><br />
       <%= f.text_field :phone %></div>

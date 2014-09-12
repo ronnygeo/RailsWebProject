@@ -5,4 +5,7 @@ class Client < ActiveRecord::Base
   has_many :ads
   has_many :payments
   has_many :reviews
+
+  mount_uploader :logo, LogoUploader
+  process_in_background :logo
 end
