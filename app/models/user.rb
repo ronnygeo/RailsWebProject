@@ -84,7 +84,7 @@ class User < ActiveRecord::Base
             password: Devise.friendly_token[0,20],
             gender: auth.extra.raw_info.gender,
             phone: auth.info.phone,
-          #  avatar:auth.info.image ? auth.info.image : auth.extra.raw_info.image
+            avatar:auth.info.image ? auth.info.image : auth.extra.raw_info.image
         )
         #user.skip_confirmation!
         user.save!

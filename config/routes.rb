@@ -5,15 +5,13 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/skiq'
   #end
 
-  resources :reviews
-
-  resources :payments
+#  resources :payments
 
   concern :locatable do
     resources :locations
   end
 
-  resources :ads
+#  resources :ads
 
   resources :listings, concerns: :locatable
 
@@ -23,10 +21,13 @@ Rails.application.routes.draw do
 
   resources :places, concerns: :locatable
 
+  resources :reviews
 
+=begin
   resources :categories do
     resources :subcategories
   end
+=end
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
