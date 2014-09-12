@@ -2336,6 +2336,7 @@
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="client_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="subcategory_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="image" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="ads_pkey" columns="id"/>
       <foreign-key name="ads_category_id_fk" columns="category_id" ref-table="categories" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="ads_client_id_fk" columns="client_id" ref-table="clients" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>

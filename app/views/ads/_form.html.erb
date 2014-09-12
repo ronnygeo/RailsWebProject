@@ -1,45 +1,49 @@
 <%= form_for(@ad) do |f| %>
-  <% if @ad.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+    <% if @ad.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
 
-      <ul>
-      <% @ad.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @ad.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :caption %><br>
-    <%= f.text_field :caption %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :subcategorization_id %><br>
-    <%= f.text_field :subcategorization_id %>
-  </div>
-  <div class="field">
-    <%= f.label :link %><br>
-    <%= f.text_field :link %>
-  </div>
-  <div class="field">
-    <%= f.label :position %><br>
-    <%= f.text_field :position %>
-  </div>
-  <div class="field">
-    <%= f.label :imagesize %><br>
-    <%= f.text_field :imagesize %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :caption %><br>
+      <%= f.text_field :caption %>
+    </div>
+    <div class="field">
+      <%= f.label :image %><br>
+      <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <%= f.label :category_id %><br>
+      <%= f.text_field :category_id %>
+    </div>
+    <div class="field">
+      <%= f.label :subcategorization_id %><br>
+      <%= f.text_field :subcategorization_id %>
+    </div>
+    <div class="field">
+      <%= f.label :link %><br>
+      <%= f.text_field :link %>
+    </div>
+    <div class="field">
+      <%= f.label :position %><br>
+      <%= f.text_field :position %>
+    </div>
+    <div class="field">
+      <%= f.label :imagesize %><br>
+      <%= f.text_field :imagesize %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

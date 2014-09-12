@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :locations
   end
 
-#  resources :ads
+  #resources :ads
 
   resources :listings, concerns: :locatable
 
