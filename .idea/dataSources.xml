@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1484165756">
+  <component name="DataSourceManagerImpl" format="xml" hash="651221181">
     <data-source source="LOCAL" name="Rails MyCityAmigo: development" uuid="02c6eef3-4291-4ada-ae7d-bfa4dc80509d">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

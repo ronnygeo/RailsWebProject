@@ -2432,6 +2432,7 @@
       <column name="duration" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <column name="poster" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="events_pkey" columns="id"/>
       <foreign-key name="events_client_id_fk" columns="client_id" ref-table="clients" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="payments_event_id_fk" table="payments" schema="public" catalog="MyCityAmigo_development" columns="event_id"/>
