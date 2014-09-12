@@ -1,0 +1,31 @@
+<h1>Listing socials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Facebook</th>
+      <th>Twiter</th>
+      <th>Google</th>
+      <th>Foursquare</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @socials.each do |social| %>
+      <tr>
+        <td><%= social.facebook_id %></td>
+        <td><%= social.twiter_id %></td>
+        <td><%= social.google_id %></td>
+        <td><%= social.foursquare_id %></td>
+        <td><%= link_to 'Show', social %></td>
+        <td><%= link_to 'Edit', edit_social_path(social) %></td>
+        <td><%= link_to 'Destroy', social, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Social', new_social_path %>

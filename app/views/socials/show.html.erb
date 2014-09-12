@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @social.facebook_id %>
+</p>
+
+<p>
+  <strong>Twiter:</strong>
+  <%= @social.twiter_id %>
+</p>
+
+<p>
+  <strong>Google:</strong>
+  <%= @social.google_id %>
+</p>
+
+<p>
+  <strong>Foursquare:</strong>
+  <%= @social.foursquare_id %>
+</p>
+
+<%= link_to 'Edit', edit_social_path(@social) %> |
+<%= link_to 'Back', socials_path %>

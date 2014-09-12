@@ -6,4 +6,6 @@ class Event < ActiveRecord::Base
   has_many :reviews
 
   has_many :images, as: :imageable
+  has_many :socials, as: :socialize
+
 end
