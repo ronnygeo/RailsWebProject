@@ -8,8 +8,10 @@ class Listing < ActiveRecord::Base
   has_many :images, as: :imageable
   has_many :socials, as: :socialize
 
-  searchkick
+  scope :subcategory?, ->(subcategory){
+    where(subcategories: {name: subcategory}).joins(:subcategories)
+  }
 
-  scope :ofsubcategory, ->(subcat){ where(client.subcategory == subcat.to_s) }
+  searchkick
 
 end

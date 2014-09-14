@@ -1,16 +1,12 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :select_listings, only: :index
 
   load_and_authorize_resource
 
   # GET /listings
   # GET /listings.json
   def index
-  unless (params[:subcat])
-    show_listings
-  else
-    @listings = Listing.all
-  end
 
   end
 
@@ -74,8 +70,24 @@ class ListingsController < ApplicationController
       @listing = Listing.find(params[:id])
     end
 
-  def show_listings
-    #@listings = Listing.require(:client).ofsubcategory(params[:subcat])
+
+  def select_listings
+    if params[:subcat].present?
+      @listings = Listing.includes(:client).subcategory?(params[:subcat])
+      #@listings =
+      #sc_id = Subcategory.where(name: params[:subcat])
+=begin
+      @listings = Listing.includes(:client).find_all do |l|
+        l.subcategories(params[:subcat])
+      end
+=end
+    #@listings = Subcategory.where(params[:subcat]).listings
+
+
+    else
+      @listings = Listing.includes(:client).all
+    end
+
   end
 
     # Never trust parameters from the scary internet, only allow the white list through.

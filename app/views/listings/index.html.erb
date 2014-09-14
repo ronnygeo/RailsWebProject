@@ -1,4 +1,4 @@
-<h1>Listing listings</h1>
+<h1>Listings</h1>
 
 <table>
   <thead>
@@ -6,7 +6,7 @@
       <th>Name</th>
       <th>Description</th>
       <th>Client</th>
-      <th>Subcategorization</th>
+      <th>Subcategory</th>
       <th>Fee</th>
       <th>Featured</th>
       <th>Keywords</th>
@@ -21,8 +21,8 @@
       <tr>
         <td><%= listing.name %></td>
         <td><%= listing.description %></td>
-        <td><%= listing.client %></td>
-        <td><%= listing.subcategorization %></td>
+        <td><%= listing.client.name %></td>
+        <td><%= listing.subcategories %></td>
         <td><%= listing.fee %></td>
         <td><%= listing.featured %></td>
         <td><%= listing.keywords %></td>
@@ -37,5 +37,6 @@
 </table>
 
 <br>
+
 
 <%= link_to 'New Listing', new_listing_path %>

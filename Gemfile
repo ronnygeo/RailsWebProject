@@ -91,6 +91,7 @@ gem 'searchkick', '~> 0.8.2'
 gem "searchjoy", '~> 0.0.7'
 
 gem 'better_errors'
+gem 'binding_of_caller'
 
 group :development do
   gem 'meta_request'

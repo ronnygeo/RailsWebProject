@@ -14,6 +14,9 @@
 
   <body class="ted pb-pattern o-lines-light">
 
+  <% if flash[:notice] %>
+  <div id="notice"><% flash[:notice] %></div>
+      <% end %>
   <% #render "layouts/top" %>
 <%= render "layouts/navbar" %>
 <div class="container">
