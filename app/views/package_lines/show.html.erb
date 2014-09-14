@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Package:</strong>
+  <%= @package_line.package %>
+</p>
+
+<p>
+  <strong>Listing:</strong>
+  <%= @package_line.listing %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @package_line.time %>
+</p>
+
+<%= link_to 'Edit', edit_package_line_path(@package_line) %> |
+<%= link_to 'Back', package_lines_path %>

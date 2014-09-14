@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @package.user %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @package.amount %>
+</p>
+
+<p>
+  <strong>Invitees:</strong>
+  <%= @package.invitees %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @package.date %>
+</p>
+
+<p>
+  <strong>Qrcode:</strong>
+  <%= @package.qrcode %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @package.recipient %>
+</p>
+
+<p>
+  <strong>Meet time:</strong>
+  <%= @package.meet_time %>
+</p>
+
+<%= link_to 'Edit', edit_package_path(@package) %> |
+<%= link_to 'Back', packages_path %>

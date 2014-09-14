@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140912124843) do
+ActiveRecord::Schema.define(version: 20140913212104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20140912124843) do
     t.datetime "updated_at"
     t.boolean  "logo_processing", default: false, null: false
     t.string   "logo"
+    t.boolean  "need_analytics"
   end
 
   add_index "clients", ["category_id"], name: "index_clients_on_category_id", using: :btree
@@ -123,6 +124,31 @@ ActiveRecord::Schema.define(version: 20140912124843) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "package_lines", force: true do |t|
+    t.integer  "package_id"
+    t.integer  "listing_id"
+    t.time     "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "package_lines", ["listing_id"], name: "index_package_lines_on_listing_id", using: :btree
+  add_index "package_lines", ["package_id"], name: "index_package_lines_on_package_id", using: :btree
+
+  create_table "packages", force: true do |t|
+    t.integer  "user_id"
+    t.decimal  "amount"
+    t.text     "invitees"
+    t.date     "date"
+    t.string   "qrcode"
+    t.string   "recipient"
+    t.time     "meet_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "packages", ["user_id"], name: "index_packages_on_user_id", using: :btree
 
   create_table "payments", force: true do |t|
     t.integer  "client_id"
@@ -256,6 +282,11 @@ ActiveRecord::Schema.define(version: 20140912124843) do
   add_foreign_key "identities", "users", name: "identities_user_id_fk"
 
   add_foreign_key "listings", "clients", name: "listings_client_id_fk"
+
+  add_foreign_key "package_lines", "listings", name: "package_lines_listing_id_fk"
+  add_foreign_key "package_lines", "packages", name: "package_lines_package_id_fk"
+
+  add_foreign_key "packages", "users", name: "packages_user_id_fk"
 
   add_foreign_key "payments", "ads", name: "payments_ad_id_fk"
   add_foreign_key "payments", "clients", name: "payments_client_id_fk"

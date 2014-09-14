@@ -1,0 +1,37 @@
+<h1>Listing packages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Amount</th>
+      <th>Invitees</th>
+      <th>Date</th>
+      <th>Qrcode</th>
+      <th>Recipient</th>
+      <th>Meet time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @packages.each do |package| %>
+      <tr>
+        <td><%= package.user %></td>
+        <td><%= package.amount %></td>
+        <td><%= package.invitees %></td>
+        <td><%= package.date %></td>
+        <td><%= package.qrcode %></td>
+        <td><%= package.recipient %></td>
+        <td><%= package.meet_time %></td>
+        <td><%= link_to 'Show', package %></td>
+        <td><%= link_to 'Edit', edit_package_path(package) %></td>
+        <td><%= link_to 'Destroy', package, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Package', new_package_path %>

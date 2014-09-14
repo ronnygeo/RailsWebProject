@@ -9,4 +9,7 @@ class Listing < ActiveRecord::Base
   has_many :socials, as: :socialize
 
   searchkick
+
+  scope :ofsubcategory, ->(subcat){ where(client.subcategory == subcat.to_s) }
+
 end

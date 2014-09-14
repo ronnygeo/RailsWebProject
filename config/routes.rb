@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :package_lines
+
+  resources :packages
+
   resources :socials
 
   resources :images

@@ -6,7 +6,12 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
+  unless (params[:subcat])
+    show_listings
+  else
     @listings = Listing.all
+  end
+
   end
 
   # GET /listings/1
@@ -68,6 +73,10 @@ class ListingsController < ApplicationController
     def set_listing
       @listing = Listing.find(params[:id])
     end
+
+  def show_listings
+    #@listings = Listing.require(:client).ofsubcategory(params[:subcat])
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params

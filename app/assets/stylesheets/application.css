@@ -31,3 +31,16 @@
     color:   white;
     display: none;
 }
+
+.banner {
+    position: relative;
+    overflow: auto;
+    height: 400px;
+}
+
+.banner li {
+    list-style: none;
+}
+.banner ul li {
+    float: left;
+}
