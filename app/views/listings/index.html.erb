@@ -1,42 +1,57 @@
-<h1>Listings</h1>
+<div class="container">
+  <div class="row">
+    <h3>Listings</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Client</th>
-      <th>Subcategory</th>
-      <th>Fee</th>
-      <th>Featured</th>
-      <th>Keywords</th>
-      <th>Link</th>
-      <th>On package</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  </div>
+  <!--div class="row" id="ad-top" style="background-color: #333333; height: 50px">
+    Ad space - Top of subcategory
+  </div-->
+  <div class="row">
+<div class="medium-3 columns" style="padding-right: -20px;">
+  <div clas="row" style="height: 250px;">
+    Filters coming here.
+  </div>
+  <div class="row">
+<div id="ad-left-callout" style="background-color: #228811;height:300px">
+  Ad space - Side callout
+</div>
+  </div>
 
-  <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.name %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.client.name %></td>
-        <td><%= listing.subcategories %></td>
-        <td><%= listing.fee %></td>
-        <td><%= listing.featured %></td>
-        <td><%= listing.keywords %></td>
-        <td><%= listing.link %></td>
-        <td><%= listing.on_package %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  </div>
+<div class="columns small-9">
+  <div class="row" id="ad-slider-listing" style="background-color: #730E15;height:200px">Ad slider</div>
+  <div class="row" id="listings-lister" style="border: 1px solid #333333">
+    <div class="columns small-9">
+    <ul>
+      <% @listings.each do |listing| %>
+          <li>
+          <ul>
+            <li><%= listing.name %></li>
+            <li><%= listing.description %></li>
+            <li><%= listing.client.name %></li>
+            <li><% listing.subcategories.each do |c| %></li>
+                    <li>
+                      <%= c.name %>
+                    </li><% end %>
+            <li><%= listing.fee %></li>
+            <li><%= listing.featured %></li>
+            <li><%= listing.keywords %></li>
+            <li><%= listing.link %></li>
+            <li><%= link_to 'Show', listing %></li>
+            <!--li><%= link_to 'Edit', edit_listing_path(listing) %></li>
+            <li><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></li-->
+          </ul>
+          </li>
+      <% end %>
+    </ul>
+    </div>
+  </div>
+  </div>
+  </div>
+
+</div>
 
 <br>
 
 
-<%= link_to 'New Listing', new_listing_path %>
+<% #link_to 'New Listing', new_listing_path %>

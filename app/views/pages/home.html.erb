@@ -6,9 +6,9 @@
 
 <div class="banner">
   <ul>
-    <li style="background-color: #222;">This is a slide.</li>
-    <li>This is another slide.</li>
-    <li>This is a final slide.</li>
+    <li style="background-color: #222; height:300px">This is a slide.</li>
+    <li style="background-color: #999; height:300px">This is another slide.</li>
+    <li style="background-color: #DDD; height:300px">This is a final slide.</li>
   </ul>
 </div>
 
@@ -17,13 +17,14 @@
 <div class="row">
 
     <div class="large-12 columns">
-      <div class="row collapse postfix-round">
-        <div class="small-10 columns">
-          <input type="text" placeholder="Hex Value">
+      <br /><br />
+      <div class="row collapse">
+        <div class="small-8 columns corner">
+          <input type="text" placeholder="What do you wanna do?">
         </div>
-        <div class="small-2 columns">
+        <!--div class="small-1 columns">
           <a href="#" class="button postfix">Go</a>
-        </div>
+        </div-->
       </div>
     </div>
 
@@ -39,9 +40,9 @@
 
 
 <% if user_signed_in? %>
-<div class="panel radius">
+<!--div class="panel radius">
   <h3>Verify your phone number to enjoy all the benefits!</h3>
   <%= link_to "Verify Now", user_two_factor_authentication_path, class: "button primary round", method: :get %>
-</div>
+</div-->
 
 <% end %>

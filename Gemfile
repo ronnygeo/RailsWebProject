@@ -113,3 +113,7 @@ group :production do
   gem 'puma'
   gem 'newrelic_rpm'
 end
+
+gem 'mongo'
+gem 'bson_ext'
+gem 'sidetiq'

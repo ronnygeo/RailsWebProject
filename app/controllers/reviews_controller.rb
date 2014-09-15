@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
+    @id = params[:id]
     @review = Review.new
   end
 

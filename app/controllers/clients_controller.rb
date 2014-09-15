@@ -1,6 +1,10 @@
+include Mongo
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
+
+
+
   # GET /clients
   # GET /clients.json
   def index
@@ -25,8 +29,14 @@ class ClientsController < ApplicationController
   # POST /clients
   # POST /clients.json
   def create
-    @client = Client.new(client_params)
+    mongo_client = MongoClient.new("localhost", 27017)
+    db = mongo_client.db("MCAAnalytics")
+    client_collection = db.collection("clients")
+    puts db.collection("lex")
+    doc = {name: params[:name], facebook:params[:facebook_id], twitter:params[:twitter_id], score: 0, items:{}, negative:{}, positive:{}}
+    client_collection.insert(doc)
 
+    @client = Client.new(client_params)
     respond_to do |format|
       if @client.save
         format.html { redirect_to @client, notice: 'Client was successfully created.' }
@@ -70,6 +80,6 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name, :description, :address, :phone, :category_id, :email, :contact_person, :website, :logo_url)
+      params.require(:client).permit(:name, :description, :address, :phone, :category_id, :email, :contact_person, :website, :logo)
     end
 end

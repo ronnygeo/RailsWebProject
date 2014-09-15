@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   layout "home-layout", only: :home
+
   def home
+    @category = Category.all
 
   end
 

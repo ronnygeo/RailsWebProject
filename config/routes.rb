@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   #authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/skiq'
+    require 'sidetiq/web'
   #end
 
 #  resources :payments
@@ -19,17 +20,19 @@ Rails.application.routes.draw do
     resources :locations
   end
 
+  concern :reviewable do
+    resources :reviews
+  end
+
   #resources :ads
 
-  resources :listings, concerns: :locatable
+  resources :listings, concerns: [:locatable, :reviewable]
 
-  resources :events, concerns: :locatable
+  resources :events, concerns: [:locatable, :reviewable]
 
   resources :clients
 
-  resources :places, concerns: :locatable
-
-  resources :reviews
+  resources :places, concerns: [:locatable, :reviewable]
 
 =begin
   resources :categories do

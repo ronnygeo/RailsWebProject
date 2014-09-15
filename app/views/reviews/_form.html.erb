@@ -23,10 +23,12 @@
     <%= f.label :event_id %><br>
     <%= f.text_field :event_id %>
   </div>
+    <% if params[:listing_id] %>
   <div class="field">
     <%= f.label :listing_id %><br>
-    <%= f.text_field :listing_id %>
+    <%= f.text_field :listing_id, value: params[:listing_id] %>
   </div>
+        <% end %>
   <div class="field">
     <%= f.label :place_id %><br>
     <%= f.text_field :place_id %>
