@@ -108,5 +108,5 @@ Rails.application.routes.draw do
 
   get '/discourse/sso' => 'discourse_sso#sso'
 
-  get '/clients/:id/addItems' => 'clients#addItems', via: [:get, :patch], :as => :addItems
+  #get '/clients/:id/addItems' => 'clients#addItems', via: [:get, :patch], :as => :addItems
 end
