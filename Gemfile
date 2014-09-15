@@ -117,3 +117,4 @@ end
 gem 'mongo'
 gem 'bson_ext'
 gem 'sidetiq'
+gem "koala", "~> 1.10.1"

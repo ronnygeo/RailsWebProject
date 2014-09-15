@@ -1,0 +1,13 @@
+<%= form_for @citems do |f| %>
+
+    <div class="field">
+      <label>Add Menu items (seperated by ;)</label>
+      <%= f.text_area :items %>
+
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+<% end %>

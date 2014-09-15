@@ -2716,7 +2716,7 @@
     <table name="socials" schema="public" catalog="MyCityAmigo_development" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc29jaWFsc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
       <column name="facebook_id" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="twiter_id" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="twitter_id" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="google_id" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="foursquare_id" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="socialize_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>

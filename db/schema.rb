@@ -205,7 +205,7 @@ ActiveRecord::Schema.define(version: 20140913212104) do
 
   create_table "socials", force: true do |t|
     t.string   "facebook_id"
-    t.string   "twiter_id"
+    t.string   "twitter_id"
     t.string   "google_id"
     t.string   "foursquare_id"
     t.integer  "socialize_id"

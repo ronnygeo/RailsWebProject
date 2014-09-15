@@ -1,6 +1,6 @@
 include Mongo
 class ClientsController < ApplicationController
-  before_action :set_client, only: [:show, :edit, :update, :destroy]
+  before_action :set_client, only: [:show, :edit, :addItems, :createItems, :update, :destroy]
   load_and_authorize_resource
 
 
@@ -29,13 +29,6 @@ class ClientsController < ApplicationController
   # POST /clients
   # POST /clients.json
   def create
-    mongo_client = MongoClient.new("localhost", 27017)
-    db = mongo_client.db("MCAAnalytics")
-    client_collection = db.collection("clients")
-    puts db.collection("lex")
-    doc = {name: params[:name], facebook:params[:facebook_id], twitter:params[:twitter_id], score: 0, items:{}, negative:{}, positive:{}}
-    client_collection.insert(doc)
-
     @client = Client.new(client_params)
     respond_to do |format|
       if @client.save
@@ -70,6 +63,23 @@ class ClientsController < ApplicationController
       format.html { redirect_to clients_url, notice: 'Client was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def addItems
+
+  end
+
+  def createItems
+    mongo_client = MongoClient.new("localhost", 27017)
+    db = mongo_client.db("MCAAnalytics")
+    client_collection = db.collection("clients")
+    items_hash = {}
+    params[:items].split(';').each do |i|
+      items_hash[i] = 0
+    end
+    doc = {name: @client.name, facebook:@client.socials.facebook_id, twitter:@client.socials.twitter_id, score: 0, items:items_hash, negative:{}, positive:{}}
+    client_collection.insert(doc)
+    redirect_url @client
   end
 
   private

@@ -196,6 +196,7 @@
     <orderEntry type="library" scope="PROVIDED" name="jquery-ui-rails (v4.2.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jwt (v1.0.0, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kaminari (v0.16.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="koala (v1.10.1, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="launchy (v2.4.2, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v2.7.9, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.0.9, RVM: ruby-2.1.2 [rails4.1.4]) [gem]" level="application" />

@@ -69,6 +69,6 @@ class SocialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def social_params
-      params.require(:social).permit(:facebook_id, :twiter_id, :google_id, :foursquare_id)
+      params.require(:social).permit(:facebook_id, :twitter_id, :google_id, :foursquare_id)
     end
 end
