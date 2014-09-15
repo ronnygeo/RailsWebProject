@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913212104) do
+ActiveRecord::Schema.define(version: 20140915212652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140913212104) do
     t.boolean  "logo_processing", default: false, null: false
     t.string   "logo"
     t.boolean  "need_analytics"
+    t.text     "items"
   end
 
   add_index "clients", ["category_id"], name: "index_clients_on_category_id", using: :btree
@@ -104,13 +105,13 @@ ActiveRecord::Schema.define(version: 20140913212104) do
     t.string   "name"
     t.text     "description"
     t.integer  "client_id"
-    t.decimal  "fee",         precision: 2, scale: 0
     t.boolean  "featured"
     t.text     "keywords"
     t.string   "link"
     t.boolean  "on_package"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "cost"
   end
 
   add_index "listings", ["client_id"], name: "index_listings_on_client_id", using: :btree

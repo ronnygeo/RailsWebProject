@@ -2505,7 +2505,6 @@
       <column name="name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="description" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="client_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="fee" sqlType="numeric" precision="2" scale="0" nullable="true" jdbcType="2"/>
       <column name="featured" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
       <column name="keywords" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="link" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
