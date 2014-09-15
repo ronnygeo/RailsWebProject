@@ -106,7 +106,7 @@ Rails.application.routes.draw do
 
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
+  get '/discourse/sso' => 'sso'
 
   get '/clients/:id/addItems' => 'clients#addItems', via: [:get, :patch], :as => :addItems
-  post '/clients/:id/createItems' => 'clients#createItems', via: :post, as: createItems
 end

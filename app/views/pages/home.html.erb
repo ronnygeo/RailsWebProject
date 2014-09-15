@@ -17,10 +17,10 @@
 <div class="row">
 
     <div class="large-12 columns">
-      <br /><br />
+      <br />
       <div class="row collapse">
-        <div class="small-8 columns corner">
-          <input type="text" placeholder="What do you wanna do?">
+        <div class="small-offset-1 small-10 columns">
+          <input type="text" style="border-radius: 15px" placeholder="What do you wanna do?">
         </div>
         <!--div class="small-1 columns">
           <a href="#" class="button postfix">Go</a>
@@ -30,8 +30,32 @@
 
 </div>
 
-<div class="row">Thumbnails of categories</div>
-
+<div class="row" data-equalizer>
+  <div class="columns small-2 front-thumbs" data-equalizer-watch>
+    <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
+    <h5>Browse Listings</h5>
+  </div>
+  <div class="columns small-2 front-thumbs" data-equalizer-watch>
+    <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
+    <h5>Events</h5>
+  </div>
+  <div class="columns small-2 front-thumbs" data-equalizer-watch>
+  <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
+  <h5>Create your Package</h5>
+</div>
+  <div class="columns small-2 front-thumbs" data-equalizer-watch>
+    <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
+    <h5>Drive Around</h5>
+  </div>
+  <div class="columns small-2 front-thumbs" data-equalizer-watch>
+    <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
+    <h5>Dubai <3</h5>
+  </div>
+  <div class="columns small-2 front-thumbs" data-equalizer-watch>
+    <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
+    <h5>Forums</h5>
+  </div>
+</div>
 
 </div>
 
