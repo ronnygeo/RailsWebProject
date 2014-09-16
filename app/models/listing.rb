@@ -4,8 +4,7 @@ class Listing < ActiveRecord::Base
   has_many :subcategories, through: :subcategorizations
   has_one :payment
   has_many :reviews
-  has_many :listing_packages
-  has_many :packages, through: :listing_packages
+  has_many :package_lines
 
   has_many :images, as: :imageable
   has_many :socials, as: :socialize
