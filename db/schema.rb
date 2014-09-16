@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915212652) do
+ActiveRecord::Schema.define(version: 20140916123216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20140915212652) do
     t.string   "logo"
     t.boolean  "need_analytics"
     t.text     "items"
+    t.string   "facebook_id"
+    t.string   "twitter_id"
   end
 
   add_index "clients", ["category_id"], name: "index_clients_on_category_id", using: :btree
@@ -100,6 +102,16 @@ ActiveRecord::Schema.define(version: 20140915212652) do
     t.datetime "updated_at"
     t.string   "img"
   end
+
+  create_table "listing_packages", force: true do |t|
+    t.integer  "listing_id"
+    t.integer  "package_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "listing_packages", ["listing_id"], name: "index_listing_packages_on_listing_id", using: :btree
+  add_index "listing_packages", ["package_id"], name: "index_listing_packages_on_package_id", using: :btree
 
   create_table "listings", force: true do |t|
     t.string   "name"
@@ -281,6 +293,9 @@ ActiveRecord::Schema.define(version: 20140915212652) do
   add_foreign_key "events", "clients", name: "events_client_id_fk"
 
   add_foreign_key "identities", "users", name: "identities_user_id_fk"
+
+  add_foreign_key "listing_packages", "listings", name: "listing_packages_listing_id_fk"
+  add_foreign_key "listing_packages", "packages", name: "listing_packages_package_id_fk"
 
   add_foreign_key "listings", "clients", name: "listings_client_id_fk"
 

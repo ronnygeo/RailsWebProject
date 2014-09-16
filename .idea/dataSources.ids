@@ -2396,6 +2396,9 @@
       <column name="logo_processing" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
       <column name="logo" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="need_analytics" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="items" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="facebook_id" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="twitter_id" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="clients_pkey" columns="id"/>
       <foreign-key name="clients_category_id_fk" columns="category_id" ref-table="categories" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="ads_client_id_fk" table="ads" schema="public" catalog="MyCityAmigo_development" columns="client_id"/>
@@ -2511,6 +2514,7 @@
       <column name="on_package" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <column name="cost" sqlType="float8" precision="17" scale="17" nullable="true" jdbcType="8"/>
       <primary-key name="listings_pkey" columns="id"/>
       <foreign-key name="listings_client_id_fk" columns="client_id" ref-table="clients" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="package_lines_listing_id_fk" table="package_lines" schema="public" catalog="MyCityAmigo_development" columns="listing_id"/>

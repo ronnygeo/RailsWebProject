@@ -1,10 +1,9 @@
 require 'mongo'
 class ClientsController < ApplicationController
-  before_action :set_client, only: [:show, :edit, :addItems, :createItems, :update, :destroy]
-  load_and_authorize_resource
+  before_action :set_client, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource :except => :create
 
   include Mongo
-
 
   # GET /clients
   # GET /clients.json
@@ -21,6 +20,7 @@ class ClientsController < ApplicationController
   def new
     #@s3_direct_post = S3_BUCKET.presigned_post(key: "client_logo/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
     @client = Client.new
+    @social = @client.socials.new
   end
 
   # GET /clients/1/edit
@@ -31,16 +31,22 @@ class ClientsController < ApplicationController
   # POST /clients.json
   def create
     @client = Client.new(client_params)
-
     mongo_client = MongoClient.new("localhost", 27017)
     db = mongo_client.db("MCAAnalytics")
     client_collection = db.collection("clients")
+    if @client.need_analytics?
+    items_params = params[:client][:items]
     items_hash = {}
-    params[:items].split(';').each do |i|
+    if items_params
+    items_params.split(';').each do |i|
       items_hash[i] = 0
     end
-    doc = {name: @client.name, facebook:@client.socials.facebook_id, twitter:@client.socials.twitter_id, score: 0, items:items_hash, negative:{}, positive:{}}
+    end
+
+    doc = {name: @client.name, facebook:@client.facebook_id, twitter:@client.twitter_id, score: 0, items:items_hash, negative:{}, positive:{}}
+    #puts doc
     client_collection.insert(doc)
+    end
 
 
     respond_to do |format|
@@ -59,6 +65,27 @@ class ClientsController < ApplicationController
   def update
     respond_to do |format|
       if @client.update(client_params)
+        mongo_client = MongoClient.new("localhost", 27017)
+        db = mongo_client.db("MCAAnalytics")
+        client_collection = db.collection("clients")
+        mongo_doc = client_collection.find_one({name: @client.name})
+        #puts mongo_doc
+        items_hash = mongo_doc["items"]
+
+        if @client.need_analytics?
+          items_params = params[:client][:items]
+          if items_params
+            items_params.split(';').each do |i|
+              if items_hash[i].nil?
+              items_hash[i] = 0
+              end
+            end
+          end
+
+          doc = {name: @client.name, facebook:@client.facebook_id, twitter:@client.twitter_id, score: 0, items:items_hash, negative:{}, positive:{}}
+          #puts doc
+          client_collection.update(mongo_doc,doc)
+        end
         format.html { redirect_to @client, notice: 'Client was successfully updated.' }
         format.json { render :show, status: :ok, location: @client }
       else
@@ -86,6 +113,6 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name, :description, :address, :phone, :category_id, :email, :contact_person, :website, :logo)
+      params.require(:client).permit(:name,  :logo, :description, :address, :phone, :category_id, :email, :items, :need_analytics, :contact_person, :website, :facebook_id, :twitter_id)
     end
 end
