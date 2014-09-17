@@ -69,7 +69,7 @@ class ClientsController < ApplicationController
         db = mongo_client.db("MCAAnalytics")
         client_collection = db.collection("clients")
         mongo_doc = client_collection.find_one({name: @client.name})
-        #puts mongo_doc
+        puts mongo_doc["_id"]
         items_hash = mongo_doc["items"]
 
         if @client.need_analytics?
@@ -84,7 +84,7 @@ class ClientsController < ApplicationController
 
           doc = {name: @client.name, facebook:@client.facebook_id, twitter:@client.twitter_id, score: 0, items:items_hash, negative:{}, positive:{}}
           #puts doc
-          client_collection.update(mongo_doc,doc)
+          client_collection.update({"_id" => mongo_doc["_id"]},doc)
         end
         format.html { redirect_to @client, notice: 'Client was successfully updated.' }
         format.json { render :show, status: :ok, location: @client }
