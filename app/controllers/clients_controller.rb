@@ -31,21 +31,29 @@ class ClientsController < ApplicationController
   # POST /clients.json
   def create
     @client = Client.new(client_params)
-    mongo_client = MongoClient.new("localhost", 27017)
-    db = mongo_client.db("MCAAnalytics")
-    client_collection = db.collection("clients")
+    #mongo_client = MongoClient.new("localhost", 27017)
+    #db = mongo_client.db("MCAAnalytics")
+    #client_collection = db.collection("clients")
+
     if @client.need_analytics?
-    items_params = params[:client][:items]
+      #mclient = MClient.new
+      #mclient.name << params[:client][:name]
+      #mclient.facebook << params[:client][:facebook_id]
+      #mclient.twitter << params[:client][:twitter_id]
+      #mclient.score << 0
+      items_params = params[:client][:items]
     items_hash = {}
     if items_params
     items_params.split(';').each do |i|
       items_hash[i] = 0
     end
     end
+#    mclient.items << items_hash
 
-    doc = {name: @client.name, facebook:@client.facebook_id, twitter:@client.twitter_id, score: 0, items:items_hash, negative:{}, positive:{}}
+    #doc = {name: @client.name, facebook:@client.facebook_id, twitter:@client.twitter_id, score: 0, items:items_hash, negative:{}, positive:{}}
     #puts doc
-    client_collection.insert(doc)
+    #client_collection.insert(doc)
+    MClient.create(name: params[:client][:name],facebook: params[:client][:facebook_id], twitter: params[:client][:twitter_id], items: items_hash)
     end
 
 

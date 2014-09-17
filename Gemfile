@@ -119,3 +119,6 @@ gem 'mongo_mapper'
 gem 'bson_ext'
 gem 'sidetiq'
 gem "koala", "~> 1.10.1"
+
+gem 'oj'
+gem 'oj_mimic_json'

@@ -9,7 +9,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: my_city_amigo_development
+  database: MCAAnalytics
 
 test:
   <<: *defaults
