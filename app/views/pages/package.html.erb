@@ -1,0 +1,86 @@
+<h3>Create your Package here!</h3>
+
+<label>Enter your total budget:</label>
+<input type="text" id="amount" />
+
+<label>Select listings
+</label>
+
+<dl class="accordion" data-accordion>
+  <dd class="accordion-navigation">
+    <a href="#panel1">Category 1</a>
+    <div id="panel1" class="content active">
+      <dl class="tabs" data-tab>
+        <dd class="active"><a href="#panel2-1">Subcategory 1</a></dd>
+        <dd><a href="#panel2-2">Subcategory 2</a></dd>
+        <dd><a href="#panel2-3">Subcategory 3</a></dd>
+        <dd><a href="#panel2-4">Subcategory 4</a></dd>
+      </dl>
+      <div class="tabs-content">
+        <div class="content active" id="panel2-1">
+          <p>First subcategory content goes here...</p>
+        </div>
+        <div class="content" id="panel2-2">
+          <p>Second subcategory content goes here...</p>
+        </div>
+        <div class="content" id="panel2-3">
+          <p>Third subcategory content goes here...</p>
+        </div>
+        <div class="content" id="panel2-4">
+          <p>Fourth subcategory content goes here...</p>
+        </div>
+      </div>
+    </div>
+  </dd>
+  <dd class="accordion-navigation">
+    <a href="#panel2">Category 2</a>
+    <div id="panel2" class="content">
+      Choose subcategory from Category.
+      <div class="tabs-content">
+        <div class="content active" id="panel2-1">
+          <p>First subcategory content goes here...</p>
+        </div>
+        <div class="content" id="panel2-2">
+          <p>Second subcategory content goes here...</p>
+        </div>
+        <div class="content" id="panel2-3">
+          <p>Third subcategory content goes here...</p>
+        </div>
+        <div class="content" id="panel2-4">
+          <p>Fourth subcategory content goes here...</p>
+        </div>
+      </div>
+    </div>
+  </dd>
+  <dd class="accordion-navigation">
+    <a href="#panel3">Category 3</a>
+    <div id="panel3" class="content">
+      Choose subcategory from Category.
+          <div class="tabs-content">
+        <div class="content active" id="panel2-1">
+          <p>First subcategory content goes here...</p>
+        </div>
+        <div class="content" id="panel2-2">
+          <p>Second subcategory content goes here...</p>
+        </div>
+        <div class="content" id="panel2-3">
+          <p>Third subcategory content goes here...</p>
+        </div>
+        <div class="content" id="panel2-4">
+          <p>Fourth subcategory content goes here...</p>
+        </div>
+      </div>
+    </div>
+  </dd>
+</dl>
+
+Don't like anything you see above, go to any of our current listings and add it to your package!
+<%= link_to "Listings", listings_path %>
+<script>
+  $(document).ready(function(){
+      $('#amount').keyup(function(){
+          sessionStorage["package_amount"] = $('#amount').val();
+      });
+
+  });
+</script>

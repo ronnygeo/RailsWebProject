@@ -26,7 +26,7 @@
 
 <p>
   <strong>Fee:</strong>
-  <%= @listing.fee %>
+  <%= @listing.cost %>
 </p>
 
 <p>
@@ -44,9 +44,8 @@
   <%= @listing.link %>
 </p>
 
-<p>
-  <strong>Add to Package:</strong>
-  <%= @listing.on_package %>
+<p id="addToPackageButton" style="display: none;">
+  <button><strong>Add this listing to my Package</strong></button>
 </p>
   </div>
 
@@ -60,8 +59,21 @@
         <%= @listing.reviews.first %>
       </div>
       <div class="row">
-        <%= link_to "Add Review", new_review_path(@listing) %>
+        <% #link_to "Add Review", new_review_path(@listing) %>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+      if (typeof sessionStorage["package_amount"] !== 'undefined')
+      {
+          $("#addToPackageButton").show();
+      }
+      else
+      {
+          $("#addToPackageButton").hide();
+      }
+  });
+</script>

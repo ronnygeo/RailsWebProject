@@ -2,8 +2,8 @@
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
         <li class="name">
-          <%= image_tag asset_url("logo2.png"), height: '100px' %>
-        </li>
+          <a href="/"><%= image_tag asset_url("logo2.png"), height: '100px' %>
+        </a></li>
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
@@ -11,7 +11,7 @@
         <!-- Left Nav Section -->
         <ul class="left">
           <li class="divider"></li>
-            <li class="has-dropdown"><a href="#">Events</a>
+            <li class="has-dropdown"><a href="#">EVENTS</a>
               <ul class="dropdown">
                 <li><a href="#">Sports</a></li>
               </ul>
@@ -41,7 +41,8 @@
           <li class="divider"></li>
         </ul>
       <!-- Right Nav Section -->
-      <ul class="right">
+
+      <ul style="float:right">
             <li><% unless user_signed_in? %>
                   <%= link_to 'Sign In', new_user_session_path %></li>
               <% else %>
@@ -54,6 +55,12 @@
                   <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
               <% end %></li>
               </ul>
+        </li>
+      </ul>
+
+      <ul style="float:right">
+        <li>
+          <%= link_to "Create Package", pages_package_path %>
         </li>
       </ul>
     </section>

@@ -12,6 +12,10 @@ class PagesController < ApplicationController
   def about
   end
 
+  def package
+
+  end
+
   def phone_verified?(user)
       user.phone_verified
   end

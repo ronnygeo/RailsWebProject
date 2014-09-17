@@ -12,15 +12,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
-  <body class="ted pb-pattern o-lines-light">
+  <body class="ted pb-pattern o-lines-light" style="overflow: hidden">
 
   <% #render "layouts/top" %>
 <%= render "layouts/navbar" %>
       <%= yield %>
   <hr>
-  <footer>
-    Copyright 2014. My City Amigo. All rights reserved.
-  </footer>
+
+<%= render "layouts/footer" %>
   </body>
 </html>
 
