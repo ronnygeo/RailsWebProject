@@ -206,6 +206,11 @@ GEM
     minitest (5.4.0)
     mongo (1.10.2)
       bson (= 1.10.2)
+    mongo_mapper (0.13.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0)
+      mongo (~> 1.8)
+      plucky (~> 0.6.5)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -251,6 +256,8 @@ GEM
     papertrail (0.9.10)
       chronic
     pg (0.17.1)
+    plucky (0.6.6)
+      mongo (~> 1.5)
     polyglot (0.3.5)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -435,6 +442,7 @@ DEPENDENCIES
   meta_request
   mini_magick (~> 3.5.0)
   mongo
+  mongo_mapper
   newrelic_rpm
   omniauth-facebook
   omniauth-foursquare

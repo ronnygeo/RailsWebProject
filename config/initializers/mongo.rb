@@ -4,6 +4,9 @@ include Mongo
 mongo_client = MongoClient.new("localhost", 27017)
 db = mongo_client.db("MCAAnalytics")
 
+c= db.collection("clients")
+
+puts c
 #puts db.collection_names
 #Koala.config.api_version = "v2.1"
 #@graph = Koala::Facebook::API.new('CAACEdEose0cBAEkh6cacYLuwECMBqYpeO1fwwu171Sg91wRZBrMe8u6bZBz5OEZCcHrXGd51yJFxLsYcNZBnv53vNDSTwylQIpjEMIwp0NwvjqCxJvfY8vwtRpl9CxW8JC7T5gNQ1Vbb2cWOZAZCV4pkrUkCo5PiHqIZCXJ4oMXZBDKvCkSgcAqg1qcsZBjZC3Vulm3eyfjAnWsdC9Ic7ZBMnjAstBOCk0hrZBMZD')

@@ -115,6 +115,7 @@ group :production do
 end
 
 gem 'mongo'
+gem 'mongo_mapper'
 gem 'bson_ext'
 gem 'sidetiq'
 gem "koala", "~> 1.10.1"
