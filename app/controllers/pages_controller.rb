@@ -16,6 +16,10 @@ class PagesController < ApplicationController
 
   end
 
+  def share
+
+  end
+
   def phone_verified?(user)
       user.phone_verified
   end
