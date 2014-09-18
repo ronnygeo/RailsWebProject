@@ -4,4 +4,8 @@ class SearchController < ApplicationController
 
   def events
   end
+
+  def places
+
+  end
 end

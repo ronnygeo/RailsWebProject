@@ -17,6 +17,15 @@
  *= require jquery.fileupload-ui
  */
 
+body{
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.top-bar{
+    font-family: 'Signika Negative', sans-serif;
+}
+
+
 .ted { background-color: #F7F7F7 ;}
 .ted:after { background-size: 10px ;}
 

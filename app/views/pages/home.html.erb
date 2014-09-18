@@ -14,41 +14,33 @@
 
 <div class="container">
 
-  <form id="home_search" method="get" name="search">
+
+  <form id="home_search" method="get" action="/search/listings">
   <div class="row collapse prefix-round">
     <div class="small-2 columns">
       <span class="prefix">
         <select id="option_list">
-          <option value="listings">Listings</option>
+          <option value="listings" selected="selected">Listings</option>
           <option value="events">Events</option>
           <option value="places">Dubai</option>
         </select>
       </span>
     </div>
     <div class="small-9 columns">
-      <input type="text" placeholder="Value">
+      <input type="text" placeholder="Value" name="query" id="home_search_input">
     </div>
   </div>
   </form>
 
-<div class="row">
 
-    <div class="large-12 columns">
-      <br />
-      <div class="row collapse">
+      <!--div class="row collapse">
         <div class="small-offset-1 small-10 columns">
-
-
-          <!--input type="text" style="border-radius: 15px" placeholder="What do you wanna do?"-->
-
+          <input type="text" style="border-radius: 15px" placeholder="What do you wanna do?">
         </div>
-        <!--div class="small-1 columns">
+        <div class="small-1 columns">
           <a href="#" class="button postfix">Go</a>
-        </div-->
-      </div>
-    </div>
-
-</div>
+        </div>
+</div-->
 
 <div class="row">
   <div class="columns large-2 front-thumbs">
@@ -95,7 +87,7 @@
 <script>
   $(document).ready(function(){
       $('#option_list').change(function(){
-          var action = $(this).val();
+          var action = $(this).val() ? $(this).val() : "listings";
           $('#home_search').attr("action","/search/"+action);
       });
 

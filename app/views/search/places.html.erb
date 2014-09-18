@@ -1,0 +1,21 @@
+<h1>Search Places</h1>
+<form id="places_search">
+<div class="row collapse">
+  <div class="small-offset-1 small-10 columns">
+    <input type="text" name="query" style="border-radius: 15px" value="<%= params[:query] %>" >
+  </div>
+</div>
+
+</form>
+
+
+<div class="search-results">
+
+</div>
+
+<script>
+  $(document).ready(function(){
+      $('#places_search').fadeIn(1000);
+  });
+
+</script>
