@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'search/events'
 
+  get 'search/places'
+
   resources :package_lines
 
   resources :packages
