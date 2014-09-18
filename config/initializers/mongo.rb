@@ -5,9 +5,9 @@ mongo_client = MongoClient.new("localhost", 27017)
 db = mongo_client.db("MCAAnalytics")
 
 #puts db.collection_names
-#Koala.config.api_version = "v2.1"
-#@graph = Koala::Facebook::API.new('CAACEdEose0cBAEkh6cacYLuwECMBqYpeO1fwwu171Sg91wRZBrMe8u6bZBz5OEZCcHrXGd51yJFxLsYcNZBnv53vNDSTwylQIpjEMIwp0NwvjqCxJvfY8vwtRpl9CxW8JC7T5gNQ1Vbb2cWOZAZCV4pkrUkCo5PiHqIZCXJ4oMXZBDKvCkSgcAqg1qcsZBjZC3Vulm3eyfjAnWsdC9Ic7ZBMnjAstBOCk0hrZBMZD')
-#feed = @graph.get_connections("168627623280401", "feed")
+Koala.config.api_version = "v2.1"
+@graph = Koala::Facebook::API.new('CAACEdEose0cBABBUwZCd7qOXg3isFLK38I6CW7KYLVtEUdu3wmlXOvKcgPTgNfOeld3vwSCmIyZAYx6aAVcQMcB4iERxH0RWyZBi4DRR0SrRPhZC4oLrAmyeZA2az2DylRBZBpDpAEJktQnrGvjosocpjydJEl3oa7qWDTWcckNrouzHQSUNQM19LvsuUCdvJ82EgIZASCgH6YM3mbji3VoylfXEY2tZBUYZD')
+
 #feed.each {|f| puts f }
 
 
@@ -22,3 +22,22 @@ c.find.each do |i|
   puts i
 end
 =end
+
+c = db.collection("clients").find.all? do |cl|
+  puts cl
+  if cl["facebook"]
+  feed = @graph.get_connections("168627623280401", "feed")
+  feed.each do |f|
+  #puts f
+  end
+
+  end
+
+  end
+
+
+
+
+#c_hash = Oj.load(c)
+
+#puts c_hash
