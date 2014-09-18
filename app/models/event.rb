@@ -11,4 +11,6 @@ class Event < ActiveRecord::Base
   mount_uploader :poster, PosterUploader
   process_in_background :poster
 
+  searchkick
+
 end

@@ -4,4 +4,6 @@ class Place < ActiveRecord::Base
   has_many :reviews
 
   has_many :images, as: :imageable
+
+  searchkick
 end

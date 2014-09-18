@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'search/listings'
+
+  get 'search/events'
+
   resources :package_lines
 
   resources :packages
