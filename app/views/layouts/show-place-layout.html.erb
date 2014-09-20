@@ -1,0 +1,11 @@
+<%= render "layouts/header" %>
+<body class="ted pb-pattern o-lines-light" style="overflow: hidden;background:url(<%= asset_path(@pictures.first) %>) #222 no-repeat">
+
+<% #render "layouts/top" %>
+<%= render "layouts/navbar" %>
+<%= yield %>
+<hr>
+
+<%= render "layouts/footer" %>
+</body>
+</html>
