@@ -1,8 +1,8 @@
-<div class="contain-to-grid">
+<!--div class="contain-to-grid"-->
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
         <li class="name">
-          <a href="/"><%= image_tag asset_url("logo2.png"), height: '100px' %>
+          <a href="/"><img src=<%= asset_url("logo4.png") %> style="padding:3px;height:40px" />
         </a></li>
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -17,7 +17,7 @@
               </ul>
             </li>
           <li class="divider"></li>
-          <li class="has-dropdown"><a href="#">Listings</a>
+          <li class="has-dropdown"><a href="#">LISTINGS</a>
             <ul class="dropdown">
               <li><a href="#">Nightlife</a></li>
               <li><a href="#">Outings</a></li>
@@ -25,7 +25,7 @@
             </ul>
           </li>
           <li class="divider"></li>
-          <li class="has-dropdown"><a href="#">General Information</a>
+          <li class="has-dropdown"><a href="#">GENERAL INFORMATION</a>
             <ul class="dropdown">
               <li><a href="#">Dubai Culture</a></li>
               <li><a href="#">Do's and Dont's</a></li>
@@ -33,10 +33,10 @@
             </ul>
           </li>
           <li class="divider"></li>
-          <li><%= link_to "About", pages_about_path %>
+          <li><%= link_to "ABOUT", pages_about_path %>
           </li>
           <li class="divider"></li>
-          <li><%= link_to "Contact Us", pages_contact_path %>
+          <li><%= link_to "CONTACT", pages_contact_path %>
           </li>
           <li class="divider"></li>
         </ul>
@@ -66,4 +66,4 @@
     </section>
 </nav>
 </nav>
-    </div>
+    <!--/div-->

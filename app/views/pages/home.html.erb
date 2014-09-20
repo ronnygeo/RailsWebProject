@@ -14,23 +14,25 @@
 
 <div class="container">
 
-
+  <br />
+<div class="row">
+  <div class="columns small-centered small-8">
   <form id="home_search" method="get" action="/search/listings">
   <div class="row collapse prefix-round">
-    <div class="small-2 small-centered columns">
-      <span class="prefix">
-        <select id="option_list">
+    <div class="small-2 columns">
+        <select id="option_list" style="border-radius: 15px;border-top-right-radius: 0px;border-bottom-right-radius: 0px">
           <option value="listings" selected="selected">Listings</option>
           <option value="events">Events</option>
           <option value="places">Dubai</option>
         </select>
-      </span>
     </div>
-    <div class="small-8 small-centered columns">
-      <input type="text" placeholder="Value" name="query" id="home_search_input">
+    <div class="small-10 columns">
+      <input type="text" style="border-top-right-radius: 15px; border-bottom-right-radius: 15px" placeholder="What do you wanna do?" name="query" id="home_search_input">
     </div>
   </div>
   </form>
+</div>
+</div>
 
 
       <!--div class="row collapse">

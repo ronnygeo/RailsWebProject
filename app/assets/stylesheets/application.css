@@ -17,12 +17,25 @@
  *= require jquery.fileupload-ui
  */
 
-body{
-    font-family: 'Signika Negative', sans-serif;
+* {
+    font-family: 'Signika', sans-serif;
+
 }
 
-.top-bar{
-    font-family: 'Signika Negative', sans-serif;
+body{
+    font-family: 'Signika', sans-serif;
+}
+
+
+
+.top-bar-section ul li > a{
+    font-family: 'Signika', sans-serif;
+    font-size: 0.85rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Signika', sans-serif;
+
 }
 
 
