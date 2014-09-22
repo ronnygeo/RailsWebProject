@@ -4,29 +4,38 @@
 <!--h1>My City Amigo</h1>
 <p>My City Amigo, home of Amigos.</p-->
 
-<div class="banner">
+<div class="banner" style="width:100%">
   <ul>
-    <li style="background-color: #222; height:300px">This is a slide.</li>
-    <li style="background-color: #999; height:300px">This is another slide.</li>
-    <li style="background-color: #DDD; height:300px">This is a final slide.</li>
+    <li style="height:300px;background-size:100% 100%;background-image:url(<%= asset_url("slide3.jpg") %>)">
+      <div style="color:white">
+      <h5 style="color:white">Caption Here!</h5>
+      <a style="color:white">Link Here</a>
+      </div>
+    </li>
+    <li style="height:300px;background-image:url(<%= asset_url("slide4.jpg") %>)">
+      <div style="color:white">
+        <h5 style="color:white">Caption Here!</h5>
+        <a style="color:white">Link Here</a>
+      </div>
+    </li>
   </ul>
 </div>
 
 <div class="container">
 
   <br />
-<div class="row">
-  <div class="columns small-centered small-8">
+<div class="row" id="home-searchbar">
+  <div class="columns small-centered medium-centered large-centered small-12 medium-10 large-9">
   <form id="home_search" method="get" action="/search/listings">
   <div class="row collapse prefix-round">
-    <div class="small-2 columns">
+    <div class="small-3 medium-2 large-2 columns">
         <select id="option_list" style="border-radius: 15px;border-top-right-radius: 0px;border-bottom-right-radius: 0px">
           <option value="listings" selected="selected">Listings</option>
           <option value="events">Events</option>
           <option value="places">Dubai</option>
         </select>
     </div>
-    <div class="small-10 columns">
+    <div class="small-9 medium-10 large-10 columns">
       <input type="text" style="border-top-right-radius: 15px; border-bottom-right-radius: 15px" placeholder="What do you wanna do?" name="query" id="home_search_input">
     </div>
   </div>
@@ -45,28 +54,28 @@
 </div-->
 
 <div class="row">
-  <div class="columns large-2 front-thumbs">
+  <div class="columns large-2 medium-4 front-thumbs">
     <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
     <h5>Browse Listings</h5>
   </div>
-  <div class="columns large-2 front-thumbs">
-    <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
+  <div class="columns large-2 medium-4 front-thumbs">
+    <img src="<%= asset_path('map.png') %>" height=100px alt="Browse Listings" />
     <h5>Events</h5>
   </div>
-  <div class="columns large-2 front-thumbs">
-  <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
+  <div class="columns large-2 medium-4 front-thumbs">
+  <img src="<%= asset_path('package.png') %>" height=100px alt="Package" />
   <h5>Create your Package</h5>
 </div>
-  <div class="columns large-2 front-thumbs">
+  <div class="columns large-2 medium-4 front-thumbs">
     <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
     <h5>Drive Around</h5>
   </div>
-  <div class="columns large-2 front-thumbs">
-    <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
+  <div class="columns large-2 medium-4 front-thumbs">
+    <img src="<%= asset_path('love.png') %>" height=100px alt="Browse Listings" />
     <h5>Dubai <3</h5>
   </div>
-  <div class="columns large-2 front-thumbs">
-    <img src="<%= asset_path('front_image_1.jpg') %>" height=100px alt="Browse Listings" />
+  <div class="columns large-2 medium-4 front-thumbs">
+    <img src="<%= asset_path('forum.png') %>" height=100px alt="Browse Listings" />
     <h5>Forums</h5>
   </div>
 </div>
@@ -88,6 +97,7 @@
 
 <script>
   $(document).ready(function(){
+      $('#home-serachbar').slideDown('fast');
       $('#option_list').change(function(){
           var action = $(this).val() ? $(this).val() : "listings";
           $('#home_search').attr("action","/search/"+action);

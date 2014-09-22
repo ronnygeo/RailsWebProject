@@ -1,13 +1,23 @@
-<h3>Create your Package here!</h3>
+<div id="PackageModal" class="reveal-modal" data-reveal>
+  <h2>Packages</h2>
+  <p class="lead">Our coolest and greatest offering to you!</p> <p>Follow along to learn how to create a package.</p>
+  <button id="StartTraining">Let's Begin!</button>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<br>
+<h3>Create your Package here.</h3>
 
 <label>Enter your total budget:</label>
 <input type="text" id="amount" />
+<button id="removeAmount">Remove Amount</button>
 
 <label>Select listings
 </label>
 
-<dl class="accordion" data-accordion>
+<dl id="PackageLister" class="accordion" data-accordion>
   <dd class="accordion-navigation">
+
     <a href="#panel1">Category 1</a>
     <div id="panel1" class="content active">
       <dl class="tabs" data-tab>
@@ -73,14 +83,56 @@
     </div>
   </dd>
 </dl>
-
+<div id="GoToListings">
 Don't like anything you see above, go to any of our current listings and add it to your package!
+
 <%= link_to "Listings", listings_path %>
+</div>
+
+<ol class="joyride-list" data-joyride>
+  <li data-id="amount" data-text="Next" data-options="tip_location: top; prev_button: false">
+    <p>Enter your budget here.</p>
+  </li>
+  <li data-id="PackageLister" data-class="custom so-awesome" data-text="Next" data-prev-text="Prev">
+    <h4>Package Listings</h4>
+    <p>Choose any of the listings from the selection to fill in your budget.</p>
+  </li>
+  <li data-id="GoToListings" data-button="Next" data-prev-text="Prev" data-options="tip_location:top;tip_animation:fade">
+    <h4></h4>
+    <p>Don't like any listings from the above list? Don't worry, click on this button to browse through our main listings and add it to package.</p>
+  </li>
+  <li data-button="End" data-prev-text="Prev">
+    <h4>You're Done</h4>
+    <p>Hope you got it, have fun creating packages suiting your needs.</p>
+  </li>
+</ol>
+
+
 <script>
   $(document).ready(function(){
+      if (!localStorage["FirstTimer"])
+      {
+          $('#PackageModal').foundation('reveal','open');
+
+          localStorage["FirstTimer"] = false;
+      }
+
+      $('#StartTraining').click(function() {
+          $(document).foundation('joyride', 'start');
+          $('#PackageModal').foundation('reveal', 'close');
+      });
+
+
       $('#amount').keyup(function(){
           sessionStorage["package_amount"] = $('#amount').val();
       });
+
+      $('#removeAmount').click(function(){
+          sessionStorage.removeItem("package_amount");
+          $('#link_nopackage').show();
+          $('#link_packagebar').hide();
+      });
+
 
   });
 </script>

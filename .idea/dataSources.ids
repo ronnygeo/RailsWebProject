@@ -2685,7 +2685,6 @@
       <column name="place_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="rating" sqlType="numeric" precision="131089" scale="0" nullable="true" jdbcType="2"/>
       <column name="review" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="popularity" sqlType="float8" precision="17" scale="17" nullable="true" jdbcType="8"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <primary-key name="reviews_pkey" columns="id"/>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140916123216) do
+ActiveRecord::Schema.define(version: 20140922135018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -205,7 +205,6 @@ ActiveRecord::Schema.define(version: 20140916123216) do
     t.integer  "place_id"
     t.decimal  "rating"
     t.text     "review"
-    t.float    "popularity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

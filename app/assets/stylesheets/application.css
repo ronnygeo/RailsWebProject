@@ -58,6 +58,7 @@ h1, h2, h3, h4, h5, h6{
     position: relative;
     overflow: auto;
     height: 400px;
+    z-index:-1;
 }
 
 .banner li {
@@ -74,3 +75,10 @@ footer {
     height: 20px; /* choose any height */
 }
 
+#site-logo{
+    height:50px;
+    z-index:50;
+    padding-bottom:5px;
+    background-color:#333;
+    border-bottom-right-radius:10px;
+}

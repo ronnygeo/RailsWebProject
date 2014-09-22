@@ -15,24 +15,30 @@
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
   </div>
-  <div class="field">
-    <%= f.label :client_id %><br>
-    <%= f.text_field :client_id %>
-  </div>
-  <div class="field">
-    <%= f.label :event_id %><br>
-    <%= f.text_field :event_id %>
-  </div>
-    <% if params[:listing_id] %>
+    <% if request.listing_id %>
   <div class="field">
     <%= f.label :listing_id %><br>
     <%= f.text_field :listing_id, value: params[:listing_id] %>
   </div>
-        <% end %>
+  <% end %>
+<% if request.client_id %>
+    <div class="field">
+      <%= f.label :client_id %><br>
+      <%= f.text_field :client_id %>
+    </div>
+<% end %>
+    <% if request.event_id %>
+    <div class="field">
+      <%= f.label :event_id %><br>
+      <%= f.text_field :event_id %>
+    </div>
+<% end %>
+    <% if request.place_id %>
   <div class="field">
     <%= f.label :place_id %><br>
     <%= f.text_field :place_id %>
   </div>
+        <% end %>
   <div class="field">
     <%= f.label :rating %><br>
     <%= f.text_field :rating %>

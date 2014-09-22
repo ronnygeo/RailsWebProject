@@ -1,0 +1,14 @@
+@import "foundation_and_overrides";
+/* Add imports of custom sass/scss files here */
+
+//Overriding default bp
+$small-range: (0em, 40.563em); /* 0, 640px -> 649px */
+$medium-range: (40.625em, 64em); /* 641px -> 650px, 1024px */
+
+@media #{$medium-up} {
+
+  #site-logo{
+    border-bottom: 3px solid white;
+  }
+}
+

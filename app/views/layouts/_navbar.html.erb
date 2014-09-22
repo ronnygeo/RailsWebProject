@@ -1,8 +1,8 @@
 <!--div class="contain-to-grid"-->
-  <nav class="top-bar" data-topbar role="navigation">
+  <nav class="top-bar" data-topbar role="navigation" style="background-color: #333">
     <ul class="title-area">
         <li class="name">
-          <a href="/"><img src=<%= asset_url("logo4.png") %> style="padding:3px;height:40px" />
+          <a href="/"><img id="site-logo" src=<%= asset_url("logod2.svg") %> />
         </a></li>
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -25,7 +25,7 @@
             </ul>
           </li>
           <li class="divider"></li>
-          <li class="has-dropdown"><a href="#">GENERAL INFORMATION</a>
+          <li class="has-dropdown"><a href="#">EXPLORE</a>
             <ul class="dropdown">
               <li><a href="#">Dubai Culture</a></li>
               <li><a href="#">Do's and Dont's</a></li>
@@ -33,10 +33,14 @@
             </ul>
           </li>
           <li class="divider"></li>
-          <li><%= link_to "ABOUT", pages_about_path %>
-          </li>
-          <li class="divider"></li>
-          <li><%= link_to "CONTACT", pages_contact_path %>
+          <li class="has-dropdown"><%= link_to "ABOUT", pages_about_path %>
+            <ul class="dropdown">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">About Dubai</a></li>
+              <li><%= link_to "Contact Us", pages_contact_path %>
+              </li>
+            </ul>
+
           </li>
           <li class="divider"></li>
         </ul>
@@ -59,11 +63,37 @@
       </ul>
 
       <ul style="float:right">
-        <li>
+        <li class="divider"></li>
+        <li id="link_nopackage">
           <%= link_to "Create Package", pages_package_path %>
         </li>
+        <li id="link_packagebar">
+          <%= link_to "My Package", pages_package_path, style: "line-height:25px" %>
+          <div class="progress success round" style="height:1rem;padding:.08rem">
+
+            <span class="meter" style="width: 80%"></span>
+
+          </div>
+        </li>
+        <li class="divider"></li>
       </ul>
     </section>
 </nav>
 </nav>
     <!--/div-->
+
+<script>
+    $(document).ready(function(){
+        if (typeof sessionStorage["package_amount"] !== 'undefined')
+        {
+            $("#link_nopackage").hide();
+            $("#link_packagebar").show();
+
+        }
+        else
+        {
+            $("#link_nopackage").show();
+            $("#link_packagebar").hide();
+        }
+    });
+</script>

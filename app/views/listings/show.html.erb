@@ -16,7 +16,7 @@
 
 <p>
   <strong>Client:</strong>
-  <%= @listing.client %>
+  <%= @listing.client.name %>
 </p>
 
 <p>
@@ -59,7 +59,7 @@
         <%= @listing.reviews.first %>
       </div>
       <div class="row">
-        <% #link_to "Add Review", new_review_path(@listing) %>
+        <%= link_to "Add Review", new_listing_review_path(@listing) %>
       </div>
     </div>
   </div>

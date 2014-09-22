@@ -7,7 +7,7 @@
 
 <p>
   <strong>Client:</strong>
-  <%= @review.client %>
+  <%= @review.client.name %>
 </p>
 
 <p>
@@ -35,10 +35,6 @@
   <%= @review.review %>
 </p>
 
-<p>
-  <strong>Popularity:</strong>
-  <%= @review.popularity %>
-</p>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
 <%= link_to 'Back', reviews_path %>
