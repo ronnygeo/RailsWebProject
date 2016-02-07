@@ -81,7 +81,7 @@ gem 'aws-sdk'
 gem 'foundation-rails'
 gem 'jquery-turbolinks'
 
-gem 'rails_admin_flatly_theme', :git => 'git://github.com/konjoot/rails_admin_flatly_theme.git'
+#gem 'rails_admin_flatly_theme', :git => 'git://github.com/konjoot/rails_admin_flatly_theme.git'
 
 
 gem 'paper_trail', '~> 3.0.5'
@@ -109,10 +109,13 @@ group :test do
   gem 'launchy'
 end
 
+=begin
 group :production do
-  gem 'puma'
+  #gem 'puma'
   gem 'newrelic_rpm'
 end
+=end
+
 
 gem 'mongo'
 gem 'bson_ext'

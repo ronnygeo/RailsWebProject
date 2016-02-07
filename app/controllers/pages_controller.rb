@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @category = Category.all
+    @subcats = Subcategory.all
 
   end
 

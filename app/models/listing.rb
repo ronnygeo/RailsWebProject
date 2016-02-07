@@ -13,6 +13,8 @@ class Listing < ActiveRecord::Base
     where(subcategories: {name: subcategory}).joins(:subcategories)
   }
 
+  accepts_nested_attributes_for :reviews
+
   searchkick
 
 end

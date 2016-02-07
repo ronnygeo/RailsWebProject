@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/konjoot/rails_admin_flatly_theme.git
-  revision: 0f70933dbc603d2f2f3b8ccb14e2f933aad95af6
-  specs:
-    rails_admin_flatly_theme (1.1.0)
-      rails (> 3.1.3)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -213,7 +206,6 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    newrelic_rpm (3.9.4.245)
     nokogiri (1.5.11)
     oauth (0.4.7)
     oauth2 (1.0.0)
@@ -256,8 +248,6 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    puma (2.9.0)
-      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
@@ -435,7 +425,6 @@ DEPENDENCIES
   meta_request
   mini_magick (~> 3.5.0)
   mongo
-  newrelic_rpm
   omniauth-facebook
   omniauth-foursquare
   omniauth-google-oauth2
@@ -443,10 +432,8 @@ DEPENDENCIES
   paper_trail (~> 3.0.5)
   papertrail
   pg
-  puma
   rails (= 4.1.4)
   rails_admin (~> 0.6.3)
-  rails_admin_flatly_theme!
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

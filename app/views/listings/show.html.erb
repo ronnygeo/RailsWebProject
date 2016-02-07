@@ -1,5 +1,5 @@
 <div class="row"><div class="columns small-4">
-<%= image_tag @listing.images.first %>
+<%= image_tag asset_path(@listing.images.first.img) %>
 </div>
   <div class="columns small-8">
 <p id="notice"><%= notice %></p>
@@ -56,11 +56,12 @@
     Reviews for this listing
     <div class="row">
       <div class="columns small-10">
-        <%= @listing.reviews.first %>
+        <%= @listing.reviews.first.review %>
       </div>
-      <div class="row">
-        <%= link_to "Add Review", new_listing_review_path(@listing) %>
-      </div>
+
+
+
+
     </div>
   </div>
 </div>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails MyCityAmigo: development" uuid="02c6eef3-4291-4ada-ae7d-bfa4dc80509d">
+      <user-name>mcatest</user-name>
+      <user-password>dfc7dfc9dfcbdfdedfcfdfd9dfde</user-password>
+    </data-source>
+    <data-source name="Rails MyCityAmigo: test" uuid="59a53acb-62e7-475d-ba73-ce0c82198e0d">
+      <user-name>mcatest</user-name>
+      <user-password>dfc7dfc9dfcbdfdedfcfdfd9dfde</user-password>
+    </data-source>
+    <data-source name="Rails MyCityAmigo: production" uuid="a45b5988-df7b-4cdd-9240-b5d2f61f8b3d">
+      <user-name>MyCityAmigo</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe7dff3dfe9dfe3dffedff3dfebdfe7dfe3dfeddfe5dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>

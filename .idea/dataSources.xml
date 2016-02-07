@@ -5,26 +5,40 @@
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/MyCityAmigo_development</jdbc-url>
-      <user-name>mcatest</user-name>
-      <user-password>dfc7dfc9dfcbdfdedfcfdfd9dfde</user-password>
-      <libraries />
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine60/jdbc-drivers/postgresql-driver-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine60/jdbc-drivers/postgresql-9.3-1100.jdbc4.jar</url>
+        </library>
+      </libraries>
     </data-source>
     <data-source source="LOCAL" name="Rails MyCityAmigo: test" uuid="59a53acb-62e7-475d-ba73-ce0c82198e0d">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/MyCityAmigo_test</jdbc-url>
-      <user-name>mcatest</user-name>
-      <user-password>dfc7dfc9dfcbdfdedfcfdfd9dfde</user-password>
-      <libraries />
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine60/jdbc-drivers/postgresql-driver-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine60/jdbc-drivers/postgresql-9.3-1100.jdbc4.jar</url>
+        </library>
+      </libraries>
     </data-source>
     <data-source source="LOCAL" name="Rails MyCityAmigo: production" uuid="a45b5988-df7b-4cdd-9240-b5d2f61f8b3d">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:MyCityAmigo_production</jdbc-url>
-      <user-name>MyCityAmigo</user-name>
-      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe7dff3dfe9dfe3dffedff3dfebdfe7dfe3dfeddfe5dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
-      <libraries />
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine60/jdbc-drivers/postgresql-driver-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine60/jdbc-drivers/postgresql-9.3-1100.jdbc4.jar</url>
+        </library>
+      </libraries>
     </data-source>
   </component>
 </project>
-

@@ -3,11 +3,12 @@
     <h3>Listings</h3>
 
   </div>
-  <!--div class="row" id="ad-top" style="background-color: #333333; height: 50px">
+  <div class="row" id="ad-top" style="background-color: #333333; height: 100px">
     Ad space - Top of subcategory
-  </div-->
+  </div>
+  <br />
   <div class="row">
-<div class="medium-3 columns" style="padding-right: -20px;">
+<div class="medium-2 small-12 columns" style="padding-right: -20px;">
   <div clas="row" style="height: 250px;">
     Filters coming here.
   </div>
@@ -18,7 +19,7 @@
   </div>
 
   </div>
-<div class="columns small-9">
+<div class="columns medium-9 small-9">
   <div class="row" id="ad-slider-listing">
 
     <div class="banner">
@@ -32,10 +33,10 @@
 
   </div>
   <div class="row" id="listings-lister" style="border: 1px solid #333333">
-    <div class="columns small-9">
+    <div class="columns medium-9 small-9">
     <ul>
       <% @listings.each do |listing| %>
-          <li>
+          <li style="border-bottom: 1px dashed #333333">
           <ul>
             <li><%= listing.name %></li>
             <li><%= listing.description %></li>
@@ -65,4 +66,4 @@
 <br>
 
 
-<% #link_to 'New Listing', new_listing_path %>
+<%= link_to 'New Listing', new_listing_path %>

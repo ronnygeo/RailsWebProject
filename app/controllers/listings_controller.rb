@@ -13,6 +13,9 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+    @listing = Listing.find(params[:id])
+    @review = @listing.reviews.new
+    @review.listing_id = @listing.id
   end
 
   # GET /listings/new
@@ -67,7 +70,7 @@ class ListingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
-      @listing = Listing.find(params[:id])
+      @listing = Listing.includes(:reviews).find(params[:id])
     end
 
 
@@ -92,6 +95,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:name, :description, :client_id, :subcategory_id, :cost, :featured, :keywords, :link, :on_package)
+      params.require(:listing).permit(:name, :description, :client_id, :subcategorization_id, :subcategory_id, :cost, :featured, :keywords, :link, :on_package)
     end
 end
